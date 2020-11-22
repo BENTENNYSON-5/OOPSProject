@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "439724561784",
+    "firebase_url": "https://ksagtracker.firebaseio.com",
+    "project_id": "ksagtracker",
+    "storage_bucket": "ksagtracker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:439724561784:android:2d20ad63b5ec5de8eda48d",
+        "android_client_info": {
+          "package_name": "com.example.ksagtracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "439724561784-kphf41m9td8h86ppph46l5bsr56obanp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsp2TIxmwnNHYDhwFaNIuobbb8eJBlukw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "439724561784-kphf41m9td8h86ppph46l5bsr56obanp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
