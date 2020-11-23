@@ -20,7 +20,7 @@
         app:layout_constraintVertical_bias="0.795" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/newusername"
         android:layout_width="266dp"
         android:layout_height="45dp"
         android:ems="10"
@@ -40,14 +40,14 @@
         android:layout_marginTop="56dp"
         android:drawableTop="@drawable/ic_baseline_pending_actions_24"
         android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/username"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName5"
+        android:id="@+id/newid"
         android:layout_width="260dp"
         android:layout_height="40dp"
         android:ems="10"
@@ -57,11 +57,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.178"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4"
+        app:layout_constraintTop_toBottomOf="@+id/newusername"
         app:layout_constraintVertical_bias="0.083" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName6"
+        android:id="@+id/newno"
         android:layout_width="265dp"
         android:layout_height="43dp"
         android:ems="10"
@@ -71,7 +71,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.191"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5"
+        app:layout_constraintTop_toBottomOf="@+id/newid"
         app:layout_constraintVertical_bias="0.133" />
 
     <Button
@@ -83,7 +83,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.583"
-        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName5"
+        app:layout_constraintStart_toEndOf="@+id/newid"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.456" />
 
@@ -96,12 +96,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.411"
-        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName6"
+        app:layout_constraintStart_toEndOf="@+id/newno"
         app:layout_constraintTop_toBottomOf="@+id/verifyid"
         app:layout_constraintVertical_bias="0.131" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/newregister"
         android:layout_width="153dp"
         android:layout_height="48dp"
         android:text="Register"
