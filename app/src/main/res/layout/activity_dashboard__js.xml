@@ -4,21 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Dashboard_WP">
-
-    <TextView
-        android:id="@+id/textView16"
-        android:layout_width="108dp"
-        android:layout_height="27dp"
-        android:autoSizeTextType="uniform"
-        android:text="      BILLS"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.884" />
+    tools:context=".Dashboard_JS">
 
     <TextView
         android:id="@+id/textView15"
@@ -29,13 +15,13 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.889"
+        app:layout_constraintHorizontal_bias="0.843"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.491" />
 
     <TextView
-        android:id="@+id/searchwp"
+        android:id="@+id/searchjs"
         android:layout_width="44dp"
         android:layout_height="49dp"
         android:background="#E91E63"
@@ -53,10 +39,10 @@
         android:layout_height="36dp"
         android:autoSizeTextType="uniform"
         android:background="#8BC34A"
-        android:text="WORKING PROFFESSIONAL"
+        android:text="         JOB SEEKER"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/searchwp"
-        app:layout_constraintStart_toEndOf="@+id/morewp"
+        app:layout_constraintEnd_toStartOf="@+id/searchjs"
+        app:layout_constraintStart_toEndOf="@+id/morejs"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.075" />
 
@@ -69,13 +55,13 @@
         android:text="     DASHBOARD"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView11"
-        app:layout_constraintEnd_toStartOf="@+id/searchwp"
-        app:layout_constraintStart_toEndOf="@+id/morewp"
+        app:layout_constraintEnd_toStartOf="@+id/searchjs"
+        app:layout_constraintStart_toEndOf="@+id/morejs"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.055" />
 
     <TextView
-        android:id="@+id/morewp"
+        android:id="@+id/morejs"
         android:layout_width="74dp"
         android:layout_height="49dp"
         android:autoSizeTextType="uniform"
@@ -89,36 +75,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <ImageButton
-        android:id="@+id/wpinven"
-        android:layout_width="175dp"
-        android:layout_height="172dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.932"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11"
-        app:layout_constraintVertical_bias="0.171"
-        app:srcCompat="@drawable/hom_inv" />
-
-    <ImageButton
-        android:id="@+id/wpmeet"
-        android:layout_width="186dp"
-        android:layout_height="182dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/wpinven"
-        app:layout_constraintHorizontal_bias="0.555"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11"
-        app:layout_constraintVertical_bias="0.16"
-        app:srcCompat="@drawable/impp_meet" />
-
     <TextView
         android:id="@+id/textView14"
         android:layout_width="120dp"
         android:layout_height="30dp"
         android:autoSizeTextType="uniform"
-        android:text="MEETINGS"
+        android:text="IMP MAILS"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -143,13 +105,49 @@
         app:layout_constraintVertical_bias="0.977" />
 
     <ImageButton
-        android:id="@+id/wpbill"
-        android:layout_width="241dp"
-        android:layout_height="177dp"
+        android:id="@+id/jsgroc"
+        android:layout_width="191dp"
+        android:layout_height="188dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.805"
-        app:srcCompat="@drawable/billswp" />
+        app:layout_constraintVertical_bias="0.738"
+        app:srcCompat="@drawable/groc" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="126dp"
+        android:layout_height="32dp"
+        android:text="GROCERIES"
+        android:textStyle="bold"
+        android:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jsgroc"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/jsmail"
+        android:layout_width="186dp"
+        android:layout_height="172dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView14"
+        app:layout_constraintEnd_toStartOf="@+id/jsinven"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/mails" />
+
+    <ImageButton
+        android:id="@+id/jsinven"
+        android:layout_width="197dp"
+        android:layout_height="170dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.925"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/js_inve"
+        tools:layout_editor_absoluteY="174dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

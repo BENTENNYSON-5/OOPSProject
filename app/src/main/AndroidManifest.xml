@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KSAGTRACKER">
-        <activity android:name=".Dashboard_WP"></activity>
+        <activity android:name=".Dashboard_JS"></activity>
+        <activity android:name=".Dashboard_WP" />
         <activity android:name=".Loginotp" />
         <activity android:name=".AddCategory" />
         <activity android:name=".AddWork" />
