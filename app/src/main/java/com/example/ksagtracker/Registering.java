@@ -29,14 +29,14 @@ public class Registering extends AppCompatActivity {
             public void onClick(View v) {
                 newusername = usrname.getText().toString();
                 emailid = mailid.getText().toString();
-                //code
+                //code akhil
             }
         });
         verifyno.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 cellno = cellnum.getText().toString();
-                //code
+                //code gagan
             }
         });
         Register.setOnClickListener(new View.OnClickListener() {

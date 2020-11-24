@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                username = Username.getText().toString();
-               //aline is there
+               //a line is there
                //toast is in Registering.java
             }
         });
