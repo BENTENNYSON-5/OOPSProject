@@ -9,11 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KSAGTRACKER">
-        <activity android:name=".Loginotp"></activity>
+        <activity android:name=".Dashboard_WP"></activity>
+        <activity android:name=".Loginotp" />
         <activity android:name=".AddCategory" />
         <activity android:name=".AddWork" />
         <activity android:name=".IM" />
-        <activity android:name=".Dashboard" />
         <activity android:name=".Divisions" />
         <activity android:name=".Registering" />
         <activity android:name=".MainActivity">
