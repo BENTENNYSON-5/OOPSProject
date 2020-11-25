@@ -13,7 +13,7 @@ public class Notes extends AppCompatActivity {
 
     Button save;
     String save_toast = "Saved";
-    EditText n;
+    EditText n ;
     String notes;
     Button done2;
 
@@ -23,6 +23,7 @@ public class Notes extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notes);
         n = (EditText)findViewById(R.id.Notes_text);
+        n.setText(getIntent().getStringExtra("previous notes"));
         save = (Button)findViewById(R.id.save);
         done2 = (Button)findViewById(R.id.done2);
         save.setOnClickListener(new View.OnClickListener() {
@@ -42,6 +43,7 @@ public class Notes extends AppCompatActivity {
     }
     public void openmoreoptions(){
         Intent i = new Intent(this,moreoptions.class);
+        i.putExtra("previous notes",notes);
         startActivity(i);
     }
 }
