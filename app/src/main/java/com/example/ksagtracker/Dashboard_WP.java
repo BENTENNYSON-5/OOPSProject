@@ -18,6 +18,7 @@ public class Dashboard_WP extends AppCompatActivity {
     ImageButton wpinven;
     ImageButton wpbill;
     TextView other1;
+    public String s;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,19 +45,22 @@ public class Dashboard_WP extends AppCompatActivity {
         wpmeet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                    openAddWork();
+                    s= "MEETINGS";
             }
         });
         wpinven.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                openAddWork();
+                s = "INVENTORY";
             }
         });
         wpbill.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                openAddWork();
+                s= "BILLS";
             }
         });
         other1.setOnClickListener(new View.OnClickListener() {
@@ -78,6 +82,11 @@ public class Dashboard_WP extends AppCompatActivity {
     }
     public void openAddCategory(){
         Intent i = new Intent(this,AddCategory.class);
+        startActivity(i);
+    }
+    public void openAddWork(){
+        Intent i = new Intent(this,AddWork.class);
+        i.putExtra("Category",s);
         startActivity(i);
     }
 }

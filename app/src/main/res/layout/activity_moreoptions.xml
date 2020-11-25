@@ -9,8 +9,8 @@
 
     <Button
         android:id="@+id/logout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="201dp"
+        android:layout_height="46dp"
         android:text="LOG OUT"
         app:backgroundTint="#614E4E"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -18,12 +18,12 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.14" />
+        app:layout_constraintVertical_bias="0.211" />
 
     <Button
         android:id="@+id/notes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="201dp"
+        android:layout_height="44dp"
         android:text="MY PERSONAL NOTES"
         app:backgroundTint="#614E4E"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -31,12 +31,12 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.07" />
+        app:layout_constraintVertical_bias="0.068" />
 
     <Button
         android:id="@+id/todo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="201dp"
+        android:layout_height="46dp"
         android:text="GO TO--TO DO LIST"
         app:backgroundTint="#614E4E"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -45,4 +45,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/dailytime"
+        android:layout_width="201dp"
+        android:layout_height="54dp"
+        android:text="DAILY NOTIFYING TIME"
+        app:backgroundTint="#614E4E"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.135" />
+
+    <TextView
+        android:id="@+id/timing"
+        android:layout_width="119dp"
+        android:layout_height="52dp"
+        android:autoSizeTextType="uniform"
+        android:text="Display"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/dailytime"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.136" />
 </androidx.constraintlayout.widget.ConstraintLayout>

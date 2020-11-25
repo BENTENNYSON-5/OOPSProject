@@ -15,6 +15,7 @@ public class Dashboard_JS extends AppCompatActivity {
     ImageButton jsinven;
     ImageButton jsgroc;
     TextView other2;
+    public String s;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,19 +41,22 @@ public class Dashboard_JS extends AppCompatActivity {
         jsmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                openAddWork();
+                s = "IMP MAILS";
             }
         });
         jsinven.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                openAddWork();
+                s = "INVENTORY";
             }
         });
         jsgroc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                openAddWork();
+                s = "GROCERIES";
             }
         });
         other2.setOnClickListener(new View.OnClickListener() {
@@ -69,6 +73,11 @@ public class Dashboard_JS extends AppCompatActivity {
     }
     public void openAddCategory(){
         Intent i = new Intent(this,AddCategory.class);
+        startActivity(i);
+    }
+    public void openAddWork(){
+        Intent i = new Intent(this,AddWork.class);
+        i.putExtra("Category",s);
         startActivity(i);
     }
 }
