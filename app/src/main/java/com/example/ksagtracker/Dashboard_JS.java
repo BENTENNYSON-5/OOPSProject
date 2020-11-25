@@ -6,66 +6,64 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
-public class Dashboard_WP extends AppCompatActivity {
-    TextView morewp;
-    TextView searchwp;
-    ImageButton wpmeet;
-    ImageButton wpinven;
-    ImageButton wpbill;
-    TextView other1;
+public class Dashboard_JS extends AppCompatActivity {
+    TextView morejs;
+    TextView searchjs;
+    ImageButton jsmail;
+    ImageButton jsinven;
+    ImageButton jsgroc;
+    TextView other2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dashboard__w_p);
-        morewp = (TextView)findViewById(R.id.morewp);
-        searchwp = (TextView)findViewById(R.id.searchwp);
-        wpmeet = (ImageButton)findViewById(R.id.wpmeet);
-        wpinven = (ImageButton)findViewById(R.id.wpinven);
-        wpbill = (ImageButton)findViewById(R.id.wpbill);
-        other1 = (TextView)findViewById(R.id.other1);
-        morewp.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.activity_dashboard__js);
+        morejs = (TextView)findViewById(R.id.morejs);
+        searchjs = (TextView)findViewById(R.id.searchjs);
+        jsmail = (ImageButton)findViewById(R.id.jsmail);
+        jsinven = (ImageButton)findViewById(R.id.jsinven);
+        jsgroc = (ImageButton)findViewById(R.id.jsgroc);
+        other2 = (TextView)findViewById(R.id.other2);
+        morejs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              openmoreoptions();
+                openmoreoptions();
             }
         });
-        searchwp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-        wpmeet.setOnClickListener(new View.OnClickListener() {
+        searchjs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
             }
         });
-        wpinven.setOnClickListener(new View.OnClickListener() {
+        jsmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
             }
         });
-        wpbill.setOnClickListener(new View.OnClickListener() {
+        jsinven.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
             }
         });
-        other1.setOnClickListener(new View.OnClickListener() {
+        jsgroc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        other2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
               openAddCategory();
             }
         });
     }
-    public void openmoreoptions(){
+
+    public void openmoreoptions() {
         Intent i = new Intent(this,moreoptions.class);
         startActivity(i);
     }
