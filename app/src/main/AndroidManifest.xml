@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KSAGTRACKER">
-        <activity android:name=".Search"></activity>
+        <activity android:name=".Register_mobile"></activity>
+        <activity android:name=".Search" />
         <activity android:name=".ToDo" />
         <activity android:name=".Notes" />
         <activity android:name=".moreoptions" />
