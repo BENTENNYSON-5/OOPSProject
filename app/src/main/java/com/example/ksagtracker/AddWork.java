@@ -24,9 +24,9 @@ public class AddWork extends AppCompatActivity  implements TimePickerDialog.OnTi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        mTextView = findViewById(R.id.textView);
-        Button buttonTimePicker = findViewById(R.id.button);
+        setContentView(R.layout.activity_add_work);
+        mTextView = findViewById(R.id.textView7);
+        Button buttonTimePicker =(Button) findViewById(R.id.button);
         buttonTimePicker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -34,7 +34,7 @@ public class AddWork extends AppCompatActivity  implements TimePickerDialog.OnTi
                 timePicker.show(getSupportFragmentManager(), "time picker");
             }
         });
-        Button buttonCancelAlarm = findViewById(R.id.button2);
+        Button buttonCancelAlarm = (Button) findViewById(R.id.button2);
         buttonCancelAlarm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,7 +55,7 @@ public class AddWork extends AppCompatActivity  implements TimePickerDialog.OnTi
     @RequiresApi(api = Build.VERSION_CODES.N)
     private void updateTimeText(Calendar c) {
         String timeText = "Alarm set for: ";
-        timeText += DateFormat.getTimeInstance(DateFormat.SHORT).format(c);
+        timeText += DateFormat.getTimeInstance(DateFormat.SHORT).format(c.getTime());
         mTextView.setText(timeText);
     }
     @RequiresApi(api = Build.VERSION_CODES.N)

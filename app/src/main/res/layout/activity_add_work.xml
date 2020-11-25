@@ -161,11 +161,4 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/button"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
-
-    <!-- gsdgsgsdgsdgg-->
-    <!--adgfsdgtfhjdhfhdfhdfhhgfdhdfhdfhdhf-->
-    <!--adgfsdgdhsdhdfhdfhdfhdfhdfhdfhdhtfhjdhfhdfhdfhhgfdhdfhdfhdhf-->
-    <!--adgfsdgdhsdhdfhdfhdfhdfhdfhdfhdhtfhjdhfhdfhdfhhgfdhdfhdfhdhf-->
-    <!--adgfsdgdhsdhdfhdfhdfhdfhdfhdfhdhtfhjdhfhdfhdfhhgfdhdfhdfhdhf-->
-    <!--adgfsdgdhsdhdfhdfhdfhdfhdfhdfhdhtfhjdhfhdfhdfhhgfdhdfhdfhdhf-->
 </androidx.constraintlayout.widget.ConstraintLayout>
