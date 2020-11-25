@@ -23,7 +23,7 @@ public class Notes extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notes);
         n = (EditText)findViewById(R.id.Notes_text);
-        n.setText(getIntent().getStringExtra("my previous"));
+        n.setText(getIntent().getStringExtra("previous notes"));
         save = (Button)findViewById(R.id.save);
         done2 = (Button)findViewById(R.id.done2);
         save.setOnClickListener(new View.OnClickListener() {

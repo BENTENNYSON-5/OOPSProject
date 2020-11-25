@@ -16,7 +16,6 @@ Button notes;
 Button logout;
 Button dailytime;
 TextView timing;
-String note = getIntent().getStringExtra("previous notes");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +63,6 @@ String note = getIntent().getStringExtra("previous notes");
     }
     public void openNotes(){
         Intent i = new Intent(this,Notes.class);
-        i.putExtra("my previous",note);
         startActivity(i);
     }
 }
