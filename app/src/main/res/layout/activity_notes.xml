@@ -8,7 +8,7 @@
     tools:context=".Notes">
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/done2"
         android:layout_width="126dp"
         android:layout_height="41dp"
         android:text="Done"
