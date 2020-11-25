@@ -37,6 +37,7 @@ public class Dashboard_WP extends AppCompatActivity {
         searchwp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                openSearch();
 
             }
         });
@@ -65,6 +66,12 @@ public class Dashboard_WP extends AppCompatActivity {
             }
         });
     }
+
+    private void openSearch() {
+        Intent i =new Intent(this,Search.class);
+        startActivity(i);
+    }
+
     public void openmoreoptions(){
         Intent i = new Intent(this,moreoptions.class);
         startActivity(i);
