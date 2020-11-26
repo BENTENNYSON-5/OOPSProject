@@ -51,7 +51,7 @@
         app:layout_constraintVertical_bias="0.229" />
 
     <EditText
-        android:id="@+id/Date"
+        android:id="@+id/Dates"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -59,10 +59,10 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.63"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/textView7643"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.486" />
+        app:layout_constraintVertical_bias="0.45" />
 
     <TextView
         android:id="@+id/textView20"
@@ -77,10 +77,10 @@
         app:layout_constraintHorizontal_bias="0.668"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.42" />
+        app:layout_constraintVertical_bias="0.402" />
 
     <EditText
-        android:id="@+id/Work"
+        android:id="@+id/Works"
         android:layout_width="381dp"
         android:layout_height="62dp"
         android:layout_marginBottom="108dp"

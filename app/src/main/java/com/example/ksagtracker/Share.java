@@ -1,30 +1,28 @@
 package com.example.ksagtracker;
-/*
-*
-* import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.net.Uri;
-import android.os.Bundle;
-import android.os.Environment;
-import android.os.StrictMode;
-import android.view.View;
-import android.widget.Toast;
+        import android.content.Intent;
+        import android.content.pm.PackageManager;
+        import android.net.Uri;
+        import android.os.Bundle;
+        import android.os.Environment;
+        import android.os.StrictMode;
+        import android.view.View;
+        import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
+        import androidx.appcompat.app.AppCompatActivity;
+        import androidx.core.app.ActivityCompat;
 
-import java.io.File;
+        import java.io.File;
 
-import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
-import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
+        import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
+        import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
-public class MainActivity extends AppCompatActivity {
+public class Share extends AppCompatActivity {
     private String stringFile = Environment.getExternalStorageDirectory().getPath() + File.separator + "Test.pdf";
-
+    public String shdes;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_share);
         ActivityCompat.requestPermissions(this, new String[]{READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE}, PackageManager.PERMISSION_GRANTED);
 
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
@@ -52,7 +50,4 @@ public class MainActivity extends AppCompatActivity {
 
         startActivity(Intent.createChooser(intentShare, "Shared the text ..."));
     }
-}
-* */
-public class Share {
 }

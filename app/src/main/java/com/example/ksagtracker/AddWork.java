@@ -25,7 +25,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.DateFormat;
 
-public class AddWork extends AppCompatActivity  implements TimePickerDialog.OnTimeSetListener {
+public class AddWork extends Share implements TimePickerDialog.OnTimeSetListener {
     SearchObjects ob;
      EditText Work;
      EditText Date;
@@ -33,6 +33,7 @@ public class AddWork extends AppCompatActivity  implements TimePickerDialog.OnTi
      private TextView mTextView;
      Calendar c;
      Button ok;
+     Button share;
      DatabaseReference reff;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,11 +42,18 @@ public class AddWork extends AppCompatActivity  implements TimePickerDialog.OnTi
         mTextView = findViewById(R.id.time);
         Button buttonTimePicker =(Button) findViewById(R.id.button);
         Button buttonDate = (Button) findViewById(R.id.button12);
-        Work = findViewById(R.id.Work);
-        Date = findViewById(R.id.Date);
+        Work = findViewById(R.id.Works);
+        Date = findViewById(R.id.Dates);
         Desc = findViewById(R.id.Desc);
         ok = findViewById(R.id.button7);
-        reff = FirebaseDatabase.getInstance().getReference().child("User").child("1");
+        share = findViewById(R.id.share);
+        share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                shdes = Desc.getText().toString();
+            }
+        });
+        reff = FirebaseDatabase.getInstance().getReference().child("User");
         ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

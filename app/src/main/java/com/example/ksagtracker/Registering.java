@@ -69,7 +69,7 @@ public class Registering extends AppCompatActivity {
                 newUser.setEmailaddress(mailid.getText().toString().trim());
                 Long phno = Long.parseLong(cellnum.getText().toString().trim());
                 newUser.setPhoneno(phno);
-                reff.child(String.valueOf(num +1)).setValue(newUser);
+                reff.child(newUser.Username).setValue(newUser);
                 openDivisions();
             }
         });

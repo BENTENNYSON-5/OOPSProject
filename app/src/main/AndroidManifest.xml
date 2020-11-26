@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KSAGTRACKER">
-        <activity android:name=".DisplayActivity"></activity>
+        <activity android:name=".Share"></activity>
+        <activity android:name=".DisplayActivity" />
         <activity android:name=".GroceryWork" />
         <activity android:name=".Google_profile" />
         <activity android:name=".Google_login" />
