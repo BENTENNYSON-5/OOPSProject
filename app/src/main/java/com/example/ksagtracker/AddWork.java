@@ -14,19 +14,41 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.DateFormat;
 
 public class AddWork extends AppCompatActivity  implements TimePickerDialog.OnTimeSetListener {
-    private TextView mTextView;
+    SearchObjects ob;
+     EditText Work;
+     EditText Date;
+     EditText Desc;
+     TextView mTextView;
+     Button ok;
+     DatabaseReference reff;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_work);
-        mTextView = findViewById(R.id.textView7);
+        mTextView = findViewById(R.id.time);
         Button buttonTimePicker =(Button) findViewById(R.id.button);
+        Work = findViewById(R.id.Work);
+        Date = findViewById(R.id.Date);
+        Desc = findViewById(R.id.Desc);
+        ok = findViewById(R.id.button7);
+        reff = FirebaseDatabase.getInstance().getReference().child("User").child("1");
+        ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ob = new SearchObjects(Work.getText(),Date.getText(),Desc.getText());
+
+            }
+        });
         buttonTimePicker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

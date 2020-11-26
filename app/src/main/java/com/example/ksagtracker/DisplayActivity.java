@@ -14,7 +14,7 @@ public class DisplayActivity extends AppCompatActivity {
     TextView date_display;
     TextView time_display;
     TextView description_display;
-
+        SearchObjects ob;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,5 +35,8 @@ public class DisplayActivity extends AppCompatActivity {
     private void openSearch() {
         Intent i =new Intent(this,Search.class);
         startActivity(i);
+    }
+    DisplayActivity(){
+
     }
 }

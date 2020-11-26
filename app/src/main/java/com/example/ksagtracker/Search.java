@@ -8,6 +8,7 @@ import android.widget.ListView;
 import android.widget.SearchView;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 
 public class Search extends AppCompatActivity {
 
@@ -16,8 +17,6 @@ public class Search extends AppCompatActivity {
 
     ArrayList<String> list;
     ArrayAdapter<String> adapter;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
