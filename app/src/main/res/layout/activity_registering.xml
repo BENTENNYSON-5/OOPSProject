@@ -105,7 +105,7 @@
         android:id="@+id/newregister"
         android:layout_width="153dp"
         android:layout_height="48dp"
-        android:text="Register"
+        android:text="Next"
         app:backgroundTint="#11877C"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

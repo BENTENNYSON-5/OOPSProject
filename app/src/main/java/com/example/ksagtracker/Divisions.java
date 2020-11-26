@@ -10,10 +10,13 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+
 public class Divisions extends AppCompatActivity {
     RadioGroup rg;
     Button b;
     String divi;
+    DatabaseReference reff;
     RadioButton js;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,16 +37,14 @@ public class Divisions extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 int d = rg.getCheckedRadioButtonId();
-                if(d ==-1){
-                    Messege.messege(getApplicationContext(),"Select any division");
-                }
-                else if(js.isChecked()) {
+                if (d == -1) {
+                    Messege.messege(getApplicationContext(), "Select any division");
+                } else if (js.isChecked()) {
                     openDashboard_JS();
-                }
-                else {
+                } else {
                     openDashboard_WP();
                 }
-                }
+            }
         });
     }
   /*  public void onRadioButtonClicked(View view ){

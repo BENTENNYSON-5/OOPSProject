@@ -1,5 +1,6 @@
 package com.example.ksagtracker;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -10,10 +11,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 public class Registering extends AppCompatActivity {
      Button verifyid,verifyno,Register;
-     String newusername,emailid,cellno;
      EditText usrname,mailid,cellnum;
+     DatabaseReference reff;
+     NewUser newUser;
+     String newusername;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,18 +33,17 @@ public class Registering extends AppCompatActivity {
         usrname = (EditText)findViewById(R.id.newusername);
         mailid = (EditText)findViewById(R.id.newid);
         cellnum = (EditText)findViewById(R.id.newno);
+        newUser = new NewUser();
+        reff = FirebaseDatabase.getInstance().getReference().child("User");
         verifyid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                newusername = usrname.getText().toString();
-                emailid = mailid.getText().toString();
                 //code akhil
             }
         });
         verifyno.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                cellno = cellnum.getText().toString();
+            public void onClick(View v) { ;
                 //code gagan
             }
         });
@@ -43,6 +51,12 @@ public class Registering extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //code
+                newusername = usrname.getText().toString().trim();
+                newUser.setUsername(usrname.getText().toString().trim());
+                newUser.setEmailaddress(mailid.getText().toString().trim());
+                Long phno = Long.parseLong(cellnum.getText().toString().trim());
+                newUser.setPhoneno(phno);
+                reff.push().setValue(newUser);
                 openDivisions();
             }
         });
