@@ -58,7 +58,7 @@ public class Dashboard_JS extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 s = "GROCERIES";
-                openAddWork();
+                openGroceryWork();
 
             }
         });
@@ -78,10 +78,15 @@ public class Dashboard_JS extends AppCompatActivity {
         Intent i = new Intent(this,AddCategory.class);
         startActivity(i);
     }
-    public void openAddWork(){
-        Intent i = new Intent(this,AddWork.class);
-        i.putExtra("Category",s);
+    public void openGroceryWork() {
+        Intent i = new Intent(this, GroceryWork.class);
+        i.putExtra("Category", s);
         startActivity(i);
+    }
+        public void openAddWork(){
+            Intent i = new Intent(this,AddWork.class);
+            i.putExtra("Category",s);
+            startActivity(i);
     }
     public void openSearch(){
         Intent intent = new Intent(Dashboard_JS.this,Search.class);

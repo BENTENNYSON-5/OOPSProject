@@ -14,10 +14,12 @@ public class Divisions extends AppCompatActivity {
     RadioGroup rg;
     Button b;
     String divi;
+    RadioButton js;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_divisions);
+        js=(RadioButton) findViewById(R.id.js);
         /*
         Context context = getApplicationContext();
         String text = "Toast message";
@@ -35,7 +37,10 @@ public class Divisions extends AppCompatActivity {
                 if(d ==-1){
                     Messege.messege(getApplicationContext(),"Select any division");
                 }
-                else{
+                else if(js.isChecked()) {
+                    openDashboard_JS();
+                }
+                else {
                     openDashboard_WP();
                 }
                 }
@@ -58,8 +63,8 @@ public class Divisions extends AppCompatActivity {
         Intent intent = new Intent(Divisions.this,Dashboard_WP.class);
         startActivity(intent);
     }
-    /*public void openDashboard_JS(){
-        Intent intent = new Intent(Divisions.this,Dashboard_JS.class);
-        startActivity(intent);
-    }*/
+    public void openDashboard_JS(){
+        Intent intent2 = new Intent(Divisions.this,Dashboard_JS.class);
+        startActivity(intent2);
+    }
 }
