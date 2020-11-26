@@ -1,13 +1,16 @@
 package com.example.ksagtracker;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.DialogFragment;
-import java.util.Calendar;
+import android.icu.util.Calendar;
 
 public class DatePickerFragment extends DialogFragment {
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {

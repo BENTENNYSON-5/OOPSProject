@@ -1,8 +1,9 @@
 package com.example.ksagtracker;
 
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
-
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.app.AlarmManager;
@@ -24,7 +25,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.DateFormat;
 
-public class AddWork extends Share implements TimePickerDialog.OnTimeSetListener {
+public class AddWork extends Share  implements TimePickerDialog.OnTimeSetListener , DatePickerDialog.OnDateSetListener {
+
      EditText Work;
      EditText Date;
      EditText Desc;
@@ -95,6 +97,7 @@ public class AddWork extends Share implements TimePickerDialog.OnTimeSetListener
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+        c = Calendar.getInstance();
         c.set(Calendar.HOUR_OF_DAY, hourOfDay);
         c.set(Calendar.MINUTE, minute);
         c.set(Calendar.SECOND, 0);
