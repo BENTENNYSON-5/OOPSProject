@@ -4,5 +4,5 @@ public class SearchObjects {
     String noW;
     String Des;
     String date;
-    public void
+   /* public void*/
 }
