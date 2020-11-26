@@ -9,12 +9,13 @@ import android.widget.SearchView;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
 
 public class Search extends Listing {
 
     SearchView mySearchView;
     ListView myList;
-
+    List<String> LLL;
     ArrayList<String> list;
     ArrayAdapter<String> adapter;
     @Override
@@ -24,7 +25,7 @@ public class Search extends Listing {
 
         mySearchView=(SearchView)findViewById(R.id.searchView);
         myList=(ListView)findViewById(R.id.myList);
-
+        LLL = lisst;
         list=new ArrayList<String>();
 
         list.add("Karthik");
@@ -35,6 +36,11 @@ public class Search extends Listing {
         list.add("akil");
         list.add("shiv");
         list.add("Gagan");
+        list.add("Areooo");
+        list.add("arey");
+        for(int zy = 0; zy<lisst.size(); zy++){
+            list.add(LLL.get(zy));
+        }
 
         adapter=new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,list);
         myList.setAdapter(adapter);

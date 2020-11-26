@@ -1,7 +1,6 @@
 package com.example.ksagtracker;
 
 import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 import android.app.DatePickerDialog;
 import android.content.Context;
@@ -42,8 +41,8 @@ public class AddWork extends Share  implements TimePickerDialog.OnTimeSetListene
         mTextView = findViewById(R.id.time);
         Button buttonTimePicker =(Button) findViewById(R.id.button);
         Button buttonDate = (Button) findViewById(R.id.button12);
-        Work = findViewById(R.id.Work);
-        Date = findViewById(R.id.Date);
+        Work = findViewById(R.id.Works);
+        Date = findViewById(R.id.Dates);
         Desc = findViewById(R.id.Desc);
         ok = findViewById(R.id.button7);
         share = findViewById(R.id.share);
@@ -90,7 +89,7 @@ public class AddWork extends Share  implements TimePickerDialog.OnTimeSetListene
         c.set(Calendar.MONTH, month);
         c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
         String currentDateString = DateFormat.getDateInstance(DateFormat.FULL).format(c.getTime());
-        TextView textView = (TextView) findViewById(R.id.Date);
+        TextView textView = (TextView) findViewById(R.id.Dates);
         textView.setText(currentDateString);
 
     }

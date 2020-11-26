@@ -7,9 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class GroceryWork extends Share {
-
+    EditText Work1;
+    EditText Date1;
+    EditText Desc1;
+    TextView mTextView1;
+    Button save1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +25,17 @@ public class GroceryWork extends Share {
         Button sub2 = (Button) findViewById(R.id.button11);
         EditText num1=(EditText) findViewById(R.id.editTextNumberSigned2);
         EditText num2=(EditText) findViewById(R.id.editTextNumberSigned);
+        Desc1 = findViewById(R.id.editTextTextPersonName5_grocery);
+        save1 = findViewById(R.id.button7_grocery);
+        Work1 = findViewById(R.id.editTextTextPersonName_grocery);
+        Date1 = findViewById(R.id.editTextTextPersonName6_grocery);
+        mTextView1 = findViewById(R.id.textView7_grocery);
+        save1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                lisst.add(Work1.getText().toString().trim()+"\n"+Date1.getText().toString().trim()+"        "+mTextView1.getText().toString().trim()+"\n"+Desc1.getText().toString().trim());
+            }
+        });
         add1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

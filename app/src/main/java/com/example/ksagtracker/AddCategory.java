@@ -1,7 +1,6 @@
 package com.example.ksagtracker;
 
 import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 import android.content.Context;
 import android.content.Intent;
@@ -14,18 +13,33 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
 import java.text.DateFormat;
 
 public class AddCategory extends Share implements TimePickerDialog.OnTimeSetListener {
+    EditText Work2;
+    EditText Date2;
+    EditText Desc2;
+    Button save2;
     private TextView mTextView2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_category);
         mTextView2 = findViewById(R.id.textView7643);
+        Desc2 = findViewById(R.id.Description);
+        save2 = findViewById(R.id.button7);
+        Work2 = findViewById(R.id.Works);
+        Date2 = findViewById(R.id.Dates);
+        save2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                lisst.add(Work2.getText().toString().trim()+"\n"+Date2.getText().toString().trim()+"        "+mTextView2.getText().toString().trim()+"\n"+Desc2.getText().toString().trim());
+            }
+        });
         Button buttonTimePicker =(Button) findViewById(R.id.button4);
         buttonTimePicker.setOnClickListener(new View.OnClickListener() {
             @Override
