@@ -41,8 +41,8 @@ public class AddWork extends Share  implements TimePickerDialog.OnTimeSetListene
         mTextView = findViewById(R.id.time);
         Button buttonTimePicker =(Button) findViewById(R.id.button);
         Button buttonDate = (Button) findViewById(R.id.button12);
-        Work = findViewById(R.id.Works);
-        Date = findViewById(R.id.Dates);
+        Work = findViewById(R.id.Work);
+        Date = findViewById(R.id.Date);
         Desc = findViewById(R.id.Desc);
         ok = findViewById(R.id.button7);
         share = findViewById(R.id.share);
