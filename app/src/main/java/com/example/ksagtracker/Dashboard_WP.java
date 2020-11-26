@@ -45,22 +45,23 @@ public class Dashboard_WP extends AppCompatActivity {
         wpmeet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    openAddWork();
                     s= "MEETINGS";
+                    openAddWork();
+
             }
         });
         wpinven.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openAddWork();
                 s = "INVENTORY";
+                openAddWork();
             }
         });
         wpbill.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openAddWork();
                 s= "BILLS";
+                openAddWork();
             }
         });
         other1.setOnClickListener(new View.OnClickListener() {
@@ -71,7 +72,7 @@ public class Dashboard_WP extends AppCompatActivity {
         });
     }
 
-    private void openSearch() {
+    public void openSearch() {
         Intent i =new Intent(this,Search.class);
         startActivity(i);
     }

@@ -41,22 +41,25 @@ public class Dashboard_JS extends AppCompatActivity {
         jsmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openAddWork();
                 s = "IMP MAILS";
+                openAddWork();
+
             }
         });
         jsinven.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openAddWork();
                 s = "INVENTORY";
+                openAddWork();
+
             }
         });
         jsgroc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openAddWork();
                 s = "GROCERIES";
+                openAddWork();
+
             }
         });
         other2.setOnClickListener(new View.OnClickListener() {
@@ -79,5 +82,9 @@ public class Dashboard_JS extends AppCompatActivity {
         Intent i = new Intent(this,AddWork.class);
         i.putExtra("Category",s);
         startActivity(i);
+    }
+    public void openSearch(){
+        Intent intent = new Intent(Dashboard_JS.this,Search.class);
+        startActivity(intent);
     }
 }

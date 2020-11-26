@@ -38,12 +38,28 @@ public class Divisions extends AppCompatActivity {
                 else{
                     openDashboard_WP();
                 }
-            }
+                }
         });
     }
+  /*  public void onRadioButtonClicked(View view ){
+        boolean checked = ((RadioButton)view).isChecked();
+        switch (view.getId()){
+            case R.id.wp:
+                if(checked) {
+                    openDashboard_WP();
+                }
+            case R.id.js:
+                if(checked){
+                    openDashboard_JS();
+                }
+        }
+    }*/
     public void openDashboard_WP(){
-        Intent i = new Intent(this,Dashboard_WP.class);
-        i.putExtra("Divisionn",divi);
-        startActivity(i);
+        Intent intent = new Intent(Divisions.this,Dashboard_WP.class);
+        startActivity(intent);
     }
+    /*public void openDashboard_JS(){
+        Intent intent = new Intent(Divisions.this,Dashboard_JS.class);
+        startActivity(intent);
+    }*/
 }
