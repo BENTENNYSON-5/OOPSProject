@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#8BCCEA"
     tools:context=".Google_login">
 
     <TextView
@@ -23,7 +22,7 @@
         app:layout_constraintVertical_bias="0.11" />
 
     <com.google.android.gms.common.SignInButton
-        android:id="@+id/signIn_Button"
+        android:id="@+id/signIn_Button1"
         android:layout_width="362dp"
         android:layout_height="39dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,6 +31,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/click_login"
         app:layout_constraintVertical_bias="0.308" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
