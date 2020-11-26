@@ -9,6 +9,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import androidx.annotation.RequiresApi;
+import androidx.fragment.app.DialogFragment;
+import android.content.Context;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.icu.util.Calendar;
+import android.os.Build;
+
+
+import java.text.DateFormat;
 
 public class moreoptions extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener {
 Button todo;
@@ -41,7 +51,7 @@ TextView timing;
         todo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               openToDo();
+
             }
         });
         dailytime.setOnClickListener(new View.OnClickListener() {
@@ -63,10 +73,6 @@ TextView timing;
     }
     public void openNotes(){
         Intent i = new Intent(this,Notes.class);
-        startActivity(i);
-    }
-    public void openToDo(){
-        Intent i = new Intent(this,ToDo.class);
         startActivity(i);
     }
 }
