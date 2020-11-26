@@ -84,7 +84,6 @@ TextView timing;
         updateTimeText(c);
         startAlarm(c);
     }
-
     @RequiresApi(api = Build.VERSION_CODES.N)
     private void updateTimeText(Calendar c) {
         String timeText = "Alarm set for: ";

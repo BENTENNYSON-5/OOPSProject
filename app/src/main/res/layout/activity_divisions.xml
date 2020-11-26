@@ -30,7 +30,7 @@
         android:layout_height="wrap_content" >
 
         <RadioButton
-            android:id="@+id/ws"
+            android:id="@+id/wp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Working Professional" />
@@ -59,6 +59,7 @@
         android:layout_width="103dp"
         android:layout_height="wrap_content"
         android:text="Done"
+        android:onClick="onRadioButtonClicked"
         app:backgroundTint="#4CAF50" />
 
 
