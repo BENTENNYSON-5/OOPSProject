@@ -89,7 +89,7 @@ public class AddWork extends Share  implements TimePickerDialog.OnTimeSetListene
         c.set(Calendar.MONTH, month);
         c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
         String currentDateString = DateFormat.getDateInstance(DateFormat.FULL).format(c.getTime());
-        TextView textView = (TextView) findViewById(R.id.Dates);
+        TextView textView = (TextView) findViewById(R.id.Date);
         textView.setText(currentDateString);
 
     }
