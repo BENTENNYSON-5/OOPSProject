@@ -1,11 +1,13 @@
 package com.example.ksagtracker;
 
+import java.util.LinkedHashMap;
+
 public class NewUser {
     String Username;
     String Emailaddress;
     Long Phoneno;
     String Division;
-
+    LinkedHashMap<String,String> listing;
 
     public NewUser() {
     }
@@ -42,3 +44,4 @@ public class NewUser {
         Division = division;
     }
 }
+

@@ -23,6 +23,7 @@ public class Registering extends AppCompatActivity {
      DatabaseReference reff;
      NewUser newUser;
      String newusername;
+     long num = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +36,18 @@ public class Registering extends AppCompatActivity {
         cellnum = (EditText)findViewById(R.id.newno);
         newUser = new NewUser();
         reff = FirebaseDatabase.getInstance().getReference().child("User");
+        reff.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists())
+                    num = (snapshot.getChildrenCount());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
         verifyid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,7 +69,7 @@ public class Registering extends AppCompatActivity {
                 newUser.setEmailaddress(mailid.getText().toString().trim());
                 Long phno = Long.parseLong(cellnum.getText().toString().trim());
                 newUser.setPhoneno(phno);
-                reff.push().setValue(newUser);
+                reff.child(String.valueOf(num +1)).setValue(newUser);
                 openDivisions();
             }
         });

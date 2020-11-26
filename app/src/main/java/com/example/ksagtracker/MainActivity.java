@@ -1,19 +1,17 @@
 package com.example.ksagtracker;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.TextureView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
@@ -21,7 +19,6 @@ import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
-import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -55,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         loginButton =findViewById(R.id.login_button);
         login = (Button)findViewById(R.id.login);
         toRegister = (Button)findViewById(R.id.registering);
+
         Username = (EditText)findViewById(R.id.username);
         loginButton.setReadPermissions("email","public_profile");
         mCallbackManager = CallbackManager.Factory.create();
@@ -117,7 +115,17 @@ public class MainActivity extends AppCompatActivity {
                 openRegistering();
             }
         });
+
+
+
     }
+
+    private void openGoogle_login() {
+        Intent i =new Intent(this,Google_login.class);
+        i.putExtra("user",username);
+        startActivity(i);
+    }
+
 
     private void openDivision() {
         Intent i =new Intent(this,Divisions.class);
@@ -183,4 +191,5 @@ public class MainActivity extends AppCompatActivity {
              i.putExtra("user",username);
              startActivity(i);
     }
+
 }
