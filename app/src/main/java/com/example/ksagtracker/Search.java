@@ -10,7 +10,7 @@ import android.widget.SearchView;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
-public class Search extends AppCompatActivity {
+public class Search extends Listing {
 
     SearchView mySearchView;
     ListView myList;

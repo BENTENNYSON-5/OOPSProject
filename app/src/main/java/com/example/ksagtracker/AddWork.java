@@ -1,9 +1,8 @@
 package com.example.ksagtracker;
 
 import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
-import android.app.DatePickerDialog;
+
 import android.content.Context;
 import android.content.Intent;
 import android.app.AlarmManager;
@@ -26,7 +25,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.text.DateFormat;
 
 public class AddWork extends Share implements TimePickerDialog.OnTimeSetListener {
-    SearchObjects ob;
      EditText Work;
      EditText Date;
      EditText Desc;
@@ -42,8 +40,8 @@ public class AddWork extends Share implements TimePickerDialog.OnTimeSetListener
         mTextView = findViewById(R.id.time);
         Button buttonTimePicker =(Button) findViewById(R.id.button);
         Button buttonDate = (Button) findViewById(R.id.button12);
-        Work = findViewById(R.id.Works);
-        Date = findViewById(R.id.Dates);
+        Work = findViewById(R.id.Work);
+        Date = findViewById(R.id.Date);
         Desc = findViewById(R.id.Desc);
         ok = findViewById(R.id.button7);
         share = findViewById(R.id.share);
@@ -57,7 +55,7 @@ public class AddWork extends Share implements TimePickerDialog.OnTimeSetListener
         ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ob = new SearchObjects(Work.getText(),Date.getText(),Desc.getText());
+                lisst.add(Work.getText().toString().trim()+"\n"+Date.getText().toString().trim()+"        "+mTextView.getText().toString().trim()+"\n"+Desc.getText().toString().trim());
 
             }
         });
@@ -90,7 +88,7 @@ public class AddWork extends Share implements TimePickerDialog.OnTimeSetListener
         c.set(Calendar.MONTH, month);
         c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
         String currentDateString = DateFormat.getDateInstance(DateFormat.FULL).format(c.getTime());
-        TextView textView = (TextView) findViewById(R.id.Dates);
+        TextView textView = (TextView) findViewById(R.id.Date);
         textView.setText(currentDateString);
 
     }

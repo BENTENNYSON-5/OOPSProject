@@ -19,7 +19,7 @@ import android.widget.TimePicker;
 
 import java.text.DateFormat;
 
-public class AddCategory extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener {
+public class AddCategory extends Share implements TimePickerDialog.OnTimeSetListener {
     private TextView mTextView2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

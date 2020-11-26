@@ -37,7 +37,7 @@
         app:layout_constraintVertical_bias="0.079" />
 
     <EditText
-        android:id="@+id/Dates"
+        android:id="@+id/Date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -66,7 +66,7 @@
         app:layout_constraintVertical_bias="0.263" />
 
     <EditText
-        android:id="@+id/Works"
+        android:id="@+id/Work"
         android:layout_width="371dp"
         android:layout_height="0dp"
         android:layout_marginTop="92dp"

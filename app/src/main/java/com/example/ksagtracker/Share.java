@@ -16,9 +16,9 @@ package com.example.ksagtracker;
         import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
         import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
-public class Share extends AppCompatActivity {
+public class Share extends Listing {
     private String stringFile = Environment.getExternalStorageDirectory().getPath() + File.separator + "Test.pdf";
-    public String shdes;
+    public String shdes=" ";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +46,7 @@ public class Share extends AppCompatActivity {
         Intent intentShare = new Intent(Intent.ACTION_SEND);
         intentShare.setType("text/plain");
         intentShare.putExtra(Intent.EXTRA_SUBJECT,"My Subject Here ... ");
-        intentShare.putExtra(Intent.EXTRA_TEXT,"My Text of the message goes here ... write anything what you want");
+        intentShare.putExtra(Intent.EXTRA_TEXT,shdes);
 
         startActivity(Intent.createChooser(intentShare, "Shared the text ..."));
     }
