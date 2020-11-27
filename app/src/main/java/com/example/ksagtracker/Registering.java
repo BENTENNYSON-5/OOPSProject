@@ -1,15 +1,13 @@
 package com.example.ksagtracker;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -24,7 +22,10 @@ public class Registering extends AppCompatActivity {
      DatabaseReference reff;
      NewUser newUser;
      String newusername;
-     private  Object Register_mobile;
+     long num = 0;
+    private Object Register_mobile;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +38,7 @@ public class Registering extends AppCompatActivity {
         cellnum = (EditText)findViewById(R.id.newno);
         newUser = new NewUser();
         reff = FirebaseDatabase.getInstance().getReference().child("User");
+
         verifyid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
