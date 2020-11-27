@@ -26,14 +26,38 @@ import java.text.DateFormat;
 public class AddCategory extends Share implements TimePickerDialog.OnTimeSetListener, DatePickerDialog.OnDateSetListener {
     private TextView mTextView2;
     Calendar c;
+    EditText Work2;
     EditText Date2;
+    EditText Desc2;
+    Button save2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_category);
         Button buttonDate2 = (Button) findViewById(R.id.button13);
-         Date2 = findViewById(R.id.Dates);
+        Desc2 = findViewById(R.id.Description);
+        save2 = findViewById(R.id.button7);
+        Work2 = findViewById(R.id.Works);
+        Date2 = findViewById(R.id.Dates);
         mTextView2 = findViewById(R.id.textView7643);
+        Button gotodo12 = findViewById(R.id.gotodo);
+        gotodo12.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v2) {
+
+                openShare();
+            }
+        });
+        save2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String stri2 = Work2.getText().toString()+"\n"+Date2.getText().toString()+"        "+mTextView2.getText().toString()+"\n"+Desc2.getText().toString();
+                lisst.add(stri2);
+                Messege.messege(getApplicationContext(),"Saved your Work. Now Click Back Button");
+            }
+        });
+
         Button buttonTimePicker =(Button) findViewById(R.id.button4);
         buttonDate2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +81,13 @@ public class AddCategory extends Share implements TimePickerDialog.OnTimeSetList
             }
         });
     }
+    private void openShare() {
+        Intent in = new Intent(this,Share.class);
+        in.putExtra("somestring",Desc2.getText().toString());
+
+        startActivity(in);
+    }
+
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
         c = Calendar.getInstance();
@@ -71,6 +102,7 @@ public class AddCategory extends Share implements TimePickerDialog.OnTimeSetList
     @Override
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
         c = Calendar.getInstance();
+        hourOfDay--;
         c.set(Calendar.HOUR_OF_DAY, hourOfDay);
         c.set(Calendar.MINUTE, minute);
         c.set(Calendar.SECOND, 0);

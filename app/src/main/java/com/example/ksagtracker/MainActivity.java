@@ -28,8 +28,13 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends NewUser {
 
     private Button login,toRegister;
     private EditText Username;
@@ -40,15 +45,22 @@ public class MainActivity extends AppCompatActivity {
     private AccessTokenTracker accessTokenTracker;
     private LoginButton loginButton;
     private TextView textViewUser;
+    DatabaseReference rref;
     private static final String TAG = "FacebookAuthentication";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+         rref = FirebaseDatabase.getInstance().getReference().child("User");
         mFirebaseAuth = FirebaseAuth.getInstance();
         FacebookSdk.sdkInitialize(getApplicationContext());
         textViewUser = findViewById(R.id.text_user);
+        textViewUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openGoogle_login();
+            }
+        });
         loginButton =findViewById(R.id.login_button);
         login = (Button)findViewById(R.id.login);
         toRegister = (Button)findViewById(R.id.registering);
@@ -104,8 +116,21 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                username = Username.getText().toString();
-               //a line is there
-               //toast is in Registering.java
+               rref.child(username).child("mainlist");
+               rref.addListenerForSingleValueEvent(new ValueEventListener() {
+                   @Override
+                   public void onDataChange(@NonNull DataSnapshot snapshot) {
+                       if(snapshot.exists()){
+                           for(DataSnapshot dss: snapshot.getChildren())
+                               mainlist.add(dss.getValue(String.class));
+                       }
+                   }
+
+                   @Override
+                   public void onCancelled(@NonNull DatabaseError error) {
+
+                   }
+               });
             }
         });
         toRegister.setOnClickListener(new View.OnClickListener(){

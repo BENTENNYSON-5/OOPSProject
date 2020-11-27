@@ -25,7 +25,6 @@
         <activity android:name=".moreoptions" />
         <activity android:name=".Dashboard_JS" />
         <activity android:name=".Dashboard_WP" />
-        <activity android:name=".Loginotp" />
         <activity android:name=".AddCategory" />
         <activity android:name=".AddWork" />
         <activity android:name=".Divisions"

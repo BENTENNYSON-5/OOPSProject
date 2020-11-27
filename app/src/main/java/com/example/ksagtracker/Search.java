@@ -7,8 +7,14 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.LinkedHashMap;
+import java.util.List;
 
 public class Search extends Listing {
 
@@ -20,20 +26,12 @@ public class Search extends Listing {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-
         mySearchView=(SearchView)findViewById(R.id.searchView);
         myList=(ListView)findViewById(R.id.myList);
-
+        newUser.setMainlist(lisst);
         list=new ArrayList<String>();
+        Collections.copy(list,lisst);
 
-        list.add("Karthik");
-        list.add("akhil");
-        list.add("shiva");
-        list.add("gagan");
-        list.add("Karthi");
-        list.add("akil");
-        list.add("shiv");
-        list.add("Gagan");
 
         adapter=new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,list);
         myList.setAdapter(adapter);

@@ -24,18 +24,46 @@ import java.text.DateFormat;
 
 public class GroceryWork extends Share implements TimePickerDialog.OnTimeSetListener , DatePickerDialog.OnDateSetListener {
     Calendar c;
-    EditText mTextView;
+    EditText Work1;
+    EditText Date1;
+    EditText Desc1;
+    String grocery_description_string;
+    TextView mTextView1;
+    Button save1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grocery_work);
         Button add1 = (Button) findViewById(R.id.button5);
         Button add2 = (Button) findViewById(R.id.button8);
-         mTextView=findViewById(R.id.editTextTextPersonName6_grocery);
         Button sub1 = (Button) findViewById(R.id.button6);
         Button sub2 = (Button) findViewById(R.id.button11);
         EditText num1 = (EditText) findViewById(R.id.editTextNumberSigned2);
         EditText num2 = (EditText) findViewById(R.id.editTextNumberSigned);
+        Button gotodo_grocery = findViewById(R.id.gotodo_grocery);
+        gotodo_grocery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                openShare();
+            }
+        });
+        Desc1 = findViewById(R.id.editTextTextPersonName5_grocery);
+        save1 = findViewById(R.id.button7_grocery);
+        Work1 = findViewById(R.id.editTextTextPersonName_grocery);
+        Date1 = findViewById(R.id.editTextTextPersonName6_grocery);
+        mTextView1 = findViewById(R.id.textView7_grocery);
+        save1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String stri1 = Work1.getText().toString()+"\n"+Date1.getText().toString()+"        "+mTextView1.getText().toString()+"\n"+Desc1.getText().toString();
+                lisst.add(stri1);
+                Messege.messege(getApplicationContext(),"Saved your Work. Now Click Back Button");
+            }
+        });
+
         Button buttonTimePicker = (Button) findViewById(R.id.button_grocery);
         Button buttonDate = (Button) findViewById(R.id.button14);
         Button buttonCancelAlarm = (Button) findViewById(R.id.button2_grocery);
@@ -133,7 +161,7 @@ public class GroceryWork extends Share implements TimePickerDialog.OnTimeSetList
     private void updateTimeText(Calendar c) {
         String timeText = "Alarm set for: ";
         timeText += DateFormat.getTimeInstance(DateFormat.SHORT).format(c.getTime());
-        mTextView.setText(timeText);
+        mTextView1.setText(timeText);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -150,6 +178,13 @@ public class GroceryWork extends Share implements TimePickerDialog.OnTimeSetList
         Intent intent = new Intent(this, AlertReceiver.class);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0);
         alarmManager.cancel(pendingIntent);
-        mTextView.setText("Alarm canceled");
+        mTextView1.setText("Alarm canceled");
     }
+    private void openShare() {
+        Intent in = new Intent(this,Share.class);
+        in.putExtra("somestring",Desc1.getText().toString());
+
+        startActivity(in);
+    }
+
 }
