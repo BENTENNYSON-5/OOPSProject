@@ -1,8 +1,6 @@
 package com.example.ksagtracker;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.DialogFragment;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,9 +8,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class GroceryWork extends Share {
+
+
     EditText Work1;
     EditText Date1;
     EditText Desc1;
+    String grocery_description_string;
     TextView mTextView1;
     Button save1;
     @Override
@@ -25,6 +26,16 @@ public class GroceryWork extends Share {
         Button sub2 = (Button) findViewById(R.id.button11);
         EditText num1=(EditText) findViewById(R.id.editTextNumberSigned2);
         EditText num2=(EditText) findViewById(R.id.editTextNumberSigned);
+        EditText desc1 = findViewById(R.id.editTextTextPersonName5_grocery);
+        Button gotodo_grocery = findViewById(R.id.gotodo_grocery);
+        gotodo_grocery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                openShare();
+            }
+        });
         Desc1 = findViewById(R.id.editTextTextPersonName5_grocery);
         save1 = findViewById(R.id.button7_grocery);
         Work1 = findViewById(R.id.editTextTextPersonName_grocery);
@@ -82,5 +93,12 @@ public class GroceryWork extends Share {
                 num2.setText(String.valueOf(sum));
             }
         });
+    }
+
+    private void openShare() {
+        Intent in = new Intent(this,Share.class);
+        in.putExtra("somestring",Desc1.getText().toString());
+
+        startActivity(in);
     }
 }

@@ -1,14 +1,11 @@
 package com.example.ksagtracker;
 
-import androidx.annotation.RequiresApi;
-import androidx.fragment.app.DialogFragment;
+import android.app.AlarmManager;
 import android.app.DatePickerDialog;
+import android.app.PendingIntent;
+import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.app.AlarmManager;
-import android.app.PendingIntent;
-
-import android.app.TimePickerDialog;
 import android.icu.util.Calendar;
 import android.os.Build;
 import android.os.Bundle;
@@ -18,6 +15,9 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
+
+import androidx.annotation.RequiresApi;
+import androidx.fragment.app.DialogFragment;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -49,7 +49,8 @@ public class AddWork extends Share  implements TimePickerDialog.OnTimeSetListene
         share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                shdes = Desc.getText().toString();
+
+                openShare();
             }
         });
         reff = FirebaseDatabase.getInstance().getReference().child("User");
@@ -83,6 +84,14 @@ public class AddWork extends Share  implements TimePickerDialog.OnTimeSetListene
             }
         });
     }
+
+    private void openShare() {
+        Intent in = new Intent(this,Share.class);
+        in.putExtra("somestring",Desc.getText().toString());
+
+        startActivity(in);
+    }
+
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
         c = Calendar.getInstance();
