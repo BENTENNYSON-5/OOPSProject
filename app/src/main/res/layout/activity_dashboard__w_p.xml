@@ -36,7 +36,7 @@
 
     <TextView
         android:id="@+id/searchwp"
-        android:layout_width="44dp"
+        android:layout_width="54dp"
         android:layout_height="49dp"
         android:background="#E91E63"
         android:drawableTop="@drawable/ic_baseline_search_24"
@@ -49,30 +49,32 @@
 
     <TextView
         android:id="@+id/textView11"
-        android:layout_width="281dp"
-        android:layout_height="36dp"
+        android:layout_width="413dp"
+        android:layout_height="48dp"
         android:autoSizeTextType="uniform"
         android:background="#8BC34A"
-        android:text="WORKING PROFFESSIONAL"
+        android:text="WORKING PROFFESSIONAL or HOME MAKER or OTHERS"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/searchwp"
+        app:layout_constraintHorizontal_bias="0.584"
         app:layout_constraintStart_toEndOf="@+id/morewp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.075" />
+        app:layout_constraintVertical_bias="0.07" />
 
     <TextView
         android:id="@+id/textView12"
-        android:layout_width="295dp"
-        android:layout_height="49dp"
+        android:layout_width="280dp"
+        android:layout_height="48dp"
         android:autoSizeTextType="uniform"
         android:background="#E91E63"
         android:text="     DASHBOARD"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView11"
         app:layout_constraintEnd_toStartOf="@+id/searchwp"
+        app:layout_constraintHorizontal_bias="0.23"
         app:layout_constraintStart_toEndOf="@+id/morewp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.055" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/morewp"

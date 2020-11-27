@@ -33,7 +33,9 @@ public class GroceryWork extends Share {
         save1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                lisst.add(Work1.getText().toString().trim()+"\n"+Date1.getText().toString().trim()+"        "+mTextView1.getText().toString().trim()+"\n"+Desc1.getText().toString().trim());
+                String stri1 = Work1.getText().toString()+"\n"+Date1.getText().toString()+"        "+mTextView1.getText().toString()+"\n"+Desc1.getText().toString();
+                lisst.add(stri1);
+                Messege.messege(getApplicationContext(),"Saved your Work. Now Click Back Button");
             }
         });
         add1.setOnClickListener(new View.OnClickListener() {

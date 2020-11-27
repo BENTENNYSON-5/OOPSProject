@@ -60,7 +60,8 @@
         android:layout_height="wrap_content"
         android:onClick="onRadioButtonClicked"
         android:text="Register"
-        app:backgroundTint="#4CAF50" />
+        app:backgroundTint="#4CAF50"
+        tools:ignore="OnClick" />
 
 
 </LinearLayout>

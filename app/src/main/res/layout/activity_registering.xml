@@ -9,10 +9,10 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="298dp"
-        android:layout_height="110dp"
+        android:layout_width="347dp"
+        android:layout_height="136dp"
         android:autoSizeTextType="uniform"
-        android:text="For username:\nAtleast 8 in length\nShould have atleast 1 alphabet \nShould have atleast 1 digit"
+        android:text="For username:\nAtleast 8 in length\nShould have atleast 1 capital and atleast 1 small alphabet \nShould have atleast 1 digit \nShould have atleast 1 special character"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.247"

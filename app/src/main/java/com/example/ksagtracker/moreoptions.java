@@ -52,7 +52,7 @@ TextView timing;
         todo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+            openToDo();
             }
         });
         dailytime.setOnClickListener(new View.OnClickListener() {
@@ -110,6 +110,10 @@ TextView timing;
 
     public void openNotes(){
         Intent i = new Intent(this,Notes.class);
+        startActivity(i);
+    }
+    public void openToDo(){
+        Intent i = new Intent(this,ToDo.class);
         startActivity(i);
     }
 

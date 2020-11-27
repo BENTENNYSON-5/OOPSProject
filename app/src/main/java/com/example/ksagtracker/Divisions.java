@@ -11,11 +11,11 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Divisions extends AppCompatActivity {
     RadioGroup rg;
     Button b;
-    String divi;
     DatabaseReference reff;
     RadioButton js;
     @Override
@@ -23,16 +23,11 @@ public class Divisions extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_divisions);
         js=(RadioButton) findViewById(R.id.js);
-        /*
-        Context context = getApplicationContext();
-        String text = "Toast message";
-        int duration = Toast.LENGTH_SHORT;
-        Toast toast = Toast.makeText(context, text, duration);
-        toast.show();*/
         Toast t = Toast.makeText(getApplicationContext(), "Successfully registered as "+getIntent().getStringExtra("registered user"),Toast.LENGTH_SHORT);
         t.show();
         rg = (RadioGroup)findViewById(R.id.radio);
         b = (Button)findViewById(R.id.done1);
+        reff = FirebaseDatabase.getInstance().getReference().child("User");
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,26 +35,15 @@ public class Divisions extends AppCompatActivity {
                 if (d == -1) {
                     Messege.messege(getApplicationContext(), "Select any division");
                 } else if (js.isChecked()) {
+
                     openDashboard_JS();
                 } else {
+
                     openDashboard_WP();
                 }
             }
         });
     }
-  /*  public void onRadioButtonClicked(View view ){
-        boolean checked = ((RadioButton)view).isChecked();
-        switch (view.getId()){
-            case R.id.wp:
-                if(checked) {
-                    openDashboard_WP();
-                }
-            case R.id.js:
-                if(checked){
-                    openDashboard_JS();
-                }
-        }
-    }*/
     public void openDashboard_WP(){
         Intent intent = new Intent(Divisions.this,Dashboard_WP.class);
         startActivity(intent);

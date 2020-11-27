@@ -72,7 +72,7 @@ public class Dashboard_WP extends AppCompatActivity {
         });
     }
 
-    public void openSearch() {
+    private void openSearch() {
         Intent i =new Intent(this,Search.class);
         startActivity(i);
     }

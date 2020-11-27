@@ -30,7 +30,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
-
     private Button login,toRegister;
     private EditText Username;
     private String username;
@@ -49,10 +48,15 @@ public class MainActivity extends AppCompatActivity {
         mFirebaseAuth = FirebaseAuth.getInstance();
         FacebookSdk.sdkInitialize(getApplicationContext());
         textViewUser = findViewById(R.id.text_user);
+        textViewUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openGoogle_login();
+            }
+        });
         loginButton =findViewById(R.id.login_button);
         login = (Button)findViewById(R.id.login);
         toRegister = (Button)findViewById(R.id.registering);
-
         Username = (EditText)findViewById(R.id.username);
         loginButton.setReadPermissions("email","public_profile");
         mCallbackManager = CallbackManager.Factory.create();

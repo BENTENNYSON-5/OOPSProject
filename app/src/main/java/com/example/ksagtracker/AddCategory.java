@@ -37,7 +37,9 @@ public class AddCategory extends Share implements TimePickerDialog.OnTimeSetList
         save2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                lisst.add(Work2.getText().toString().trim()+"\n"+Date2.getText().toString().trim()+"        "+mTextView2.getText().toString().trim()+"\n"+Desc2.getText().toString().trim());
+                String stri2 = Work2.getText().toString()+"\n"+Date2.getText().toString()+"        "+mTextView2.getText().toString()+"\n"+Desc2.getText().toString();
+                lisst.add(stri2);
+                Messege.messege(getApplicationContext(),"Saved your Work. Now Click Back Button");
             }
         });
         Button buttonTimePicker =(Button) findViewById(R.id.button4);

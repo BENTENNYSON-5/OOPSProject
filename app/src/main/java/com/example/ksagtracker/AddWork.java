@@ -56,8 +56,9 @@ public class AddWork extends Share  implements TimePickerDialog.OnTimeSetListene
         ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                lisst.add(Work.getText().toString().trim()+"\n"+Date.getText().toString().trim()+"        "+mTextView.getText().toString().trim()+"\n"+Desc.getText().toString().trim());
-
+                String stri = Work.getText().toString()+"\n"+Date.getText().toString()+"        "+mTextView.getText().toString()+"\n"+Desc.getText().toString();
+                lisst.add(stri);
+                Messege.messege(getApplicationContext(),"Saved your Work. Now Click Back Button");
             }
         });
         buttonDate.setOnClickListener(new View.OnClickListener() {

@@ -35,7 +35,7 @@ public class Dashboard_JS extends AppCompatActivity {
         searchjs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+             openSearch();
             }
         });
         jsmail.setOnClickListener(new View.OnClickListener() {
@@ -88,7 +88,7 @@ public class Dashboard_JS extends AppCompatActivity {
             i.putExtra("Category",s);
             startActivity(i);
     }
-    public void openSearch(){
+    private void openSearch(){
         Intent intent = new Intent(Dashboard_JS.this,Search.class);
         startActivity(intent);
     }

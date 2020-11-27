@@ -15,7 +15,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KSAGTRACKER">
         <activity android:name=".Share"></activity>
-        <activity android:name=".DisplayActivity" />
         <activity android:name=".GroceryWork" />
         <activity android:name=".Google_profile" />
         <activity android:name=".Google_login" />
@@ -29,7 +28,8 @@
         <activity android:name=".Loginotp" />
         <activity android:name=".AddCategory" />
         <activity android:name=".AddWork" />
-        <activity android:name=".Divisions" />
+        <activity android:name=".Divisions"
+            android:noHistory="true"/>
         <activity android:name=".Registering" />
         <activity android:name=".MainActivity">
             <intent-filter>
