@@ -27,9 +27,9 @@ import java.text.DateFormat;
 
 public class AddWork extends Share  implements TimePickerDialog.OnTimeSetListener , DatePickerDialog.OnDateSetListener {
 
-    public static EditText Work;
+     EditText Work;
      EditText Date;
-    public static EditText Desc;
+     EditText Desc;
      private TextView mTextView;
      Calendar c;
      Button ok;

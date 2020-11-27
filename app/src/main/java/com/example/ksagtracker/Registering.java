@@ -20,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 public class Registering extends AppCompatActivity {
      Button verifyid,verifyno,Register;
      EditText usrname,mailid;
-     public static EditText cellnum;
+      EditText cellnum;
      DatabaseReference reff;
      NewUser newUser;
      String newusername;

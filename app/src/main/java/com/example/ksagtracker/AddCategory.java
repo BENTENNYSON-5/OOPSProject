@@ -26,12 +26,13 @@ import java.text.DateFormat;
 public class AddCategory extends Share implements TimePickerDialog.OnTimeSetListener, DatePickerDialog.OnDateSetListener {
     private TextView mTextView2;
     Calendar c;
+    EditText Date2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_category);
         Button buttonDate2 = (Button) findViewById(R.id.button13);
-        EditText Date = findViewById(R.id.Dates);
+         Date2 = findViewById(R.id.Dates);
         mTextView2 = findViewById(R.id.textView7643);
         Button buttonTimePicker =(Button) findViewById(R.id.button4);
         buttonDate2.setOnClickListener(new View.OnClickListener() {
@@ -63,8 +64,7 @@ public class AddCategory extends Share implements TimePickerDialog.OnTimeSetList
         c.set(Calendar.MONTH, month);
         c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
         String currentDateString = DateFormat.getDateInstance(DateFormat.FULL).format(c.getTime());
-        TextView textView = (TextView) findViewById(R.id.Dates);
-        textView.setText(currentDateString);
+        Date2.setText(currentDateString);
 
     }
     @RequiresApi(api = Build.VERSION_CODES.N)
