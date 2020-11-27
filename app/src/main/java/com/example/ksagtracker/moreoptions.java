@@ -52,7 +52,7 @@ TextView timing;
         todo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            openToDo();
+
             }
         });
         dailytime.setOnClickListener(new View.OnClickListener() {
@@ -93,12 +93,12 @@ TextView timing;
     @RequiresApi(api = Build.VERSION_CODES.N)
     private void startAlarm(Calendar c) {
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        Intent intent = new Intent(this, AlertReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0);
+        Intent intent3 = new Intent(this, AlertReceiver.class);
+        PendingIntent pendingIntent3 = PendingIntent.getBroadcast(this, 1, intent3, 0);
         if (c.before(Calendar.getInstance())) {
             c.add(Calendar.DATE, 1);
         }
-        alarmManager.setExact(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,c.getTimeInMillis(),AlarmManager.INTERVAL_DAY, pendingIntent3);
     }
 
     public void startMainActivity() {
@@ -110,10 +110,6 @@ TextView timing;
 
     public void openNotes(){
         Intent i = new Intent(this,Notes.class);
-        startActivity(i);
-    }
-    public void openToDo(){
-        Intent i = new Intent(this,ToDo.class);
         startActivity(i);
     }
 

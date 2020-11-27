@@ -1,60 +1,46 @@
 package com.example.ksagtracker;
 
-import android.app.AlarmManager;
-import android.app.PendingIntent;
-import android.app.TimePickerDialog;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
+
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+
+import android.app.TimePickerDialog;
 import android.icu.util.Calendar;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
-import androidx.annotation.RequiresApi;
-import androidx.fragment.app.DialogFragment;
-
 import java.text.DateFormat;
 
-
-public class AddCategory extends Share implements TimePickerDialog.OnTimeSetListener {
-    EditText Work2;
-    EditText Date2;
-    EditText Desc2;
-    Button save2;
-
+public class AddCategory extends Share implements TimePickerDialog.OnTimeSetListener, DatePickerDialog.OnDateSetListener {
     private TextView mTextView2;
-
-
+    Calendar c;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_category);
-        Button gotodo12 = findViewById(R.id.gotodo);
+        Button buttonDate2 = (Button) findViewById(R.id.button13);
+        EditText Date = findViewById(R.id.Dates);
         mTextView2 = findViewById(R.id.textView7643);
-        Desc2 = findViewById(R.id.Description);
-        save2 = findViewById(R.id.button7);
-        Work2 = findViewById(R.id.Works);
-        Date2 = findViewById(R.id.Dates);
-        gotodo12.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v2) {
-
-                openShare();
-            }
-        });
-        save2.setOnClickListener(new View.OnClickListener() {
+        Button buttonTimePicker =(Button) findViewById(R.id.button4);
+        buttonDate2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String stri2 = Work2.getText().toString()+"\n"+Date2.getText().toString()+"        "+mTextView2.getText().toString()+"\n"+Desc2.getText().toString();
-                lisst.add(stri2);
-                Messege.messege(getApplicationContext(),"Saved your Work. Now Click Back Button");
+                DialogFragment datePicker = new DatePickerFragment();
+                datePicker.show(getSupportFragmentManager(), "date picker");
             }
         });
-        Button buttonTimePicker =(Button) findViewById(R.id.button4);
         buttonTimePicker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,18 +56,21 @@ public class AddCategory extends Share implements TimePickerDialog.OnTimeSetList
             }
         });
     }
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+        c = Calendar.getInstance();
+        c.set(Calendar.YEAR, year);
+        c.set(Calendar.MONTH, month);
+        c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+        String currentDateString = DateFormat.getDateInstance(DateFormat.FULL).format(c.getTime());
+        TextView textView = (TextView) findViewById(R.id.Dates);
+        textView.setText(currentDateString);
 
-    private void openShare() {
-        Intent in = new Intent(this,Share.class);
-        in.putExtra("somestring",Desc2.getText().toString());
-
-        startActivity(in);
     }
-
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-        Calendar c = Calendar.getInstance();
+        c = Calendar.getInstance();
         c.set(Calendar.HOUR_OF_DAY, hourOfDay);
         c.set(Calendar.MINUTE, minute);
         c.set(Calendar.SECOND, 0);

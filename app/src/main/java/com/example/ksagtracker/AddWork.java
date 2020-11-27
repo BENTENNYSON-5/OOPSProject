@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.icu.util.Calendar;
 import android.os.Build;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -26,9 +27,9 @@ import java.text.DateFormat;
 
 public class AddWork extends Share  implements TimePickerDialog.OnTimeSetListener , DatePickerDialog.OnDateSetListener {
 
-     EditText Work;
+    public static EditText Work;
      EditText Date;
-     EditText Desc;
+    public static EditText Desc;
      private TextView mTextView;
      Calendar c;
      Button ok;
@@ -57,9 +58,8 @@ public class AddWork extends Share  implements TimePickerDialog.OnTimeSetListene
         ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String stri = Work.getText().toString()+"\n"+Date.getText().toString()+"        "+mTextView.getText().toString()+"\n"+Desc.getText().toString();
-                lisst.add(stri);
-                Messege.messege(getApplicationContext(),"Saved your Work. Now Click Back Button");
+                lisst.add(Work.getText().toString().trim()+"\n"+Date.getText().toString().trim()+"        "+mTextView.getText().toString().trim()+"\n"+Desc.getText().toString().trim());
+
             }
         });
         buttonDate.setOnClickListener(new View.OnClickListener() {
@@ -107,16 +107,20 @@ public class AddWork extends Share  implements TimePickerDialog.OnTimeSetListene
     @Override
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
         c = Calendar.getInstance();
+        hourOfDay--;
         c.set(Calendar.HOUR_OF_DAY, hourOfDay);
         c.set(Calendar.MINUTE, minute);
         c.set(Calendar.SECOND, 0);
+
         updateTimeText(c);
         startAlarm(c);
+        hourOfDay++;
     }
     @RequiresApi(api = Build.VERSION_CODES.N)
     private void updateTimeText(Calendar c) {
         String timeText = "Alarm set for: ";
         timeText += DateFormat.getTimeInstance(DateFormat.SHORT).format(c.getTime());
+
         mTextView.setText(timeText);
     }
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -125,6 +129,7 @@ public class AddWork extends Share  implements TimePickerDialog.OnTimeSetListene
         Intent intent = new Intent(this, AlertReceiver.class);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0);
         alarmManager.setExact(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
+
     }
     private void cancelAlarm() {
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
