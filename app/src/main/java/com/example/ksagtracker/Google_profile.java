@@ -44,7 +44,7 @@ public class Google_profile extends AppCompatActivity implements GoogleApiClient
         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
 
         googleApiClient = new GoogleApiClient.Builder(this).enableAutoManage(this , this)
-                .addApi(Auth.GOOGLE_SIGN_IN_API , gso).build();
+                .addApi(Auth.GOOGLE_SIGN_IN_API, gso).build();
          sign_out.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {

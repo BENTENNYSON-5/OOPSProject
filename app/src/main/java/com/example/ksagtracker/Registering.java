@@ -1,6 +1,5 @@
 package com.example.ksagtracker;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -24,6 +23,8 @@ public class Registering extends AppCompatActivity {
      NewUser newUser;
      String newusername;
      long num = 0;
+    private Object Register_mobile;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +47,7 @@ public class Registering extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //code gagan
+                open();
             }
         });
         Register.setOnClickListener(new View.OnClickListener() {
@@ -66,6 +68,11 @@ public class Registering extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void open() {
+        Intent i =new Intent(this,Register_mobile.class);
+        startActivity(i);
     }
     public void openDivisions(){
         Intent i = new Intent(this,Divisions.class);
@@ -89,4 +96,5 @@ public class Registering extends AppCompatActivity {
 
         return countt == 4;
     }
+
 }

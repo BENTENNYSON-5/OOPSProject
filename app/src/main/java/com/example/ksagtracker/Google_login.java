@@ -29,7 +29,7 @@ public  class Google_login extends AppCompatActivity implements GoogleApiClient.
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestIdToken(getString(R.string.default_web_client_id)).requestEmail().build();
         googleApiClient = new GoogleApiClient.Builder(this).enableAutoManage(this , this )
-                .addApi(Auth.GOOGLE_SIGN_IN_API , gso).build();
+                .addApi(Auth.GOOGLE_SIGN_IN_API, gso).build();
         signInButton = findViewById(R.id.signIn_Button1);
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
