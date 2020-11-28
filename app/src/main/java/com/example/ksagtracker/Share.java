@@ -15,8 +15,8 @@ public class Share extends Listing {
     public String fades;
     public String raids;
     public String times;
-    public String itemss = " ";
-    public String numberss = " ";
+    public String itemss ;
+    public String numberss ;
 
     Button share_description;
     private View view;
@@ -32,8 +32,19 @@ public class Share extends Listing {
         fades = getIntent().getStringExtra("nameshare");
         raids = getIntent().getStringExtra("dateshare");
         times = getIntent().getStringExtra("timeshare");
-        itemss = getIntent().getStringExtra("itemshare");
+        if(itemss == null ){
+            itemss = " ";
+        }
+        else{
+            itemss = getIntent().getStringExtra("itemshare");
+        }
+        if(numberss == null){
+            numberss = " ";
+        }
+        else
+        {
         numberss = getIntent().getStringExtra("countshare");
+        }
         TextView name_sharedetails = findViewById(R.id.name_sharedetails);
         name_sharedetails.setText(fades);
         TextView date_sharedetails = findViewById(R.id.date_sharedetails);
