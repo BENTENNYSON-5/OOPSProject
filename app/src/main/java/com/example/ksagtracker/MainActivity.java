@@ -177,7 +177,6 @@ public class MainActivity extends NewUser {
                 }
             }
         });
-
     }
 
     @Override

@@ -1,16 +1,11 @@
 package com.example.ksagtracker;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.DialogFragment;
-
+import android.app.AlarmManager;
 import android.app.DatePickerDialog;
+import android.app.PendingIntent;
+import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.app.AlarmManager;
-import android.app.PendingIntent;
-
-import android.app.TimePickerDialog;
 import android.icu.util.Calendar;
 import android.os.Build;
 import android.os.Bundle;
@@ -21,6 +16,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import androidx.annotation.RequiresApi;
+import androidx.fragment.app.DialogFragment;
+
 import java.text.DateFormat;
 
 public class AddCategory extends Share implements TimePickerDialog.OnTimeSetListener, DatePickerDialog.OnDateSetListener {
@@ -30,6 +28,9 @@ public class AddCategory extends Share implements TimePickerDialog.OnTimeSetList
     EditText Date2;
     EditText Desc2;
     Button save2;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +85,10 @@ public class AddCategory extends Share implements TimePickerDialog.OnTimeSetList
     private void openShare() {
         Intent in = new Intent(this,Share.class);
         in.putExtra("somestring",Desc2.getText().toString());
+        in.putExtra("nameshare",Work2.getText().toString());
+        in.putExtra("dateshare",Date2.getText().toString());
+        in.putExtra("timeshare",mTextView2.getText().toString());
+
 
         startActivity(in);
     }

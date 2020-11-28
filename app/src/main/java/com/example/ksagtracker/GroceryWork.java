@@ -1,9 +1,5 @@
 package com.example.ksagtracker;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.DialogFragment;
-
 import android.app.AlarmManager;
 import android.app.DatePickerDialog;
 import android.app.PendingIntent;
@@ -20,6 +16,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import androidx.annotation.RequiresApi;
+import androidx.fragment.app.DialogFragment;
+
 import java.text.DateFormat;
 
 public class GroceryWork extends Share implements TimePickerDialog.OnTimeSetListener , DatePickerDialog.OnDateSetListener {
@@ -27,9 +26,12 @@ public class GroceryWork extends Share implements TimePickerDialog.OnTimeSetList
     EditText Work1;
     EditText Date1;
     EditText Desc1;
+    EditText item_name;
     String grocery_description_string;
     TextView mTextView1;
     Button save1;
+    String name_item;
+    String name_count;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,13 +41,18 @@ public class GroceryWork extends Share implements TimePickerDialog.OnTimeSetList
         Button add2 = (Button) findViewById(R.id.button8);
         Button sub1 = (Button) findViewById(R.id.button6);
         Button sub2 = (Button) findViewById(R.id.button11);
-        EditText num1 = (EditText) findViewById(R.id.editTextNumberSigned2);
-        EditText num2 = (EditText) findViewById(R.id.editTextNumberSigned);
+        EditText num1=(EditText) findViewById(R.id.editTextNumberSigned2);
+        EditText num2=(EditText) findViewById(R.id.editTextNumberSigned);
+         Desc1 = findViewById(R.id.editTextTextPersonName5_grocery);
+
+
         Button gotodo_grocery = findViewById(R.id.gotodo_grocery);
         gotodo_grocery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                 item_name = findViewById(R.id.item_name);
+                name_item = item_name.getText().toString();
+                name_count = num1.getText().toString();
 
                 openShare();
             }
@@ -140,7 +147,7 @@ public class GroceryWork extends Share implements TimePickerDialog.OnTimeSetList
         c.set(Calendar.MONTH, month);
         c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
         String currentDateString = DateFormat.getDateInstance(DateFormat.FULL).format(c.getTime());
-        TextView textView = (TextView) findViewById(R.id.button14);
+        TextView textView = (TextView) findViewById(R.id.editTextTextPersonName6_grocery);
         textView.setText(currentDateString);
 
     }
@@ -183,6 +190,12 @@ public class GroceryWork extends Share implements TimePickerDialog.OnTimeSetList
     private void openShare() {
         Intent in = new Intent(this,Share.class);
         in.putExtra("somestring",Desc1.getText().toString());
+        in.putExtra("nameshare",Work1.getText().toString());
+        in.putExtra("dateshare",Date1.getText().toString());
+        in.putExtra("timeshare",mTextView1.getText().toString());
+        in.putExtra("itemshare",name_item);
+        in.putExtra("countshare",name_count);
+
 
         startActivity(in);
     }

@@ -6,14 +6,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 public class Registering extends AppCompatActivity {
      Button verifyid,verifyno,Register;
@@ -37,7 +33,7 @@ public class Registering extends AppCompatActivity {
         mailid = (EditText)findViewById(R.id.newid);
         cellnum = (EditText)findViewById(R.id.newno);
         newUser = new NewUser();
-        reff = FirebaseDatabase.getInstance().getReference().child("User");
+
 
         verifyid.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,9 +56,10 @@ public class Registering extends AppCompatActivity {
                     newUser.setUsername(usrname.getText().toString().trim());
                     newUser.setEmailaddress(mailid.getText().toString().trim());
                     Long phno = Long.parseLong(cellnum.getText().toString().trim());
-                    newUser.setPhoneno(phno);
+                   newUser.setPhoneno(phno);
                     newUser.setMainlist(null);
-                    reff.child(newUser.Username).push().setValue(newUser);
+                    reff = FirebaseDatabase.getInstance().getReference().child("User").child(newUser.Username);
+                    reff.push().setValue(newUser);
                     openDivisions();
                 }
                 else{

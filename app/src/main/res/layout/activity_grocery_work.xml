@@ -151,7 +151,7 @@
         app:layout_constraintVertical_bias="0.402" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/item_name"
         android:layout_width="171dp"
         android:layout_height="46dp"
         android:ems="10"
@@ -176,6 +176,7 @@
         android:ems="10"
         android:hint="Name of item"
         android:inputType="textPersonName"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/textView_grocery"
         app:layout_constraintStart_toStartOf="parent"
@@ -214,7 +215,8 @@
         android:layout_height="35dp"
         android:text="+"
         android:textSize="16sp"
-        app:backgroundTint="#009688"
+        android:visibility="invisible"
+        app:backgroundTint="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/button7_grocery"
         app:layout_constraintEnd_toEndOf="@+id/button11"
         app:layout_constraintHorizontal_bias="0.787"
@@ -228,6 +230,7 @@
         android:layout_height="38dp"
         android:text="-"
         android:textSize="16sp"
+        android:visibility="invisible"
         app:backgroundTint="#009688"
         app:layout_constraintBottom_toTopOf="@+id/button7_grocery"
         app:layout_constraintEnd_toEndOf="parent"
@@ -242,6 +245,7 @@
         android:layout_height="47dp"
         android:ems="10"
         android:inputType="numberSigned"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.584"
