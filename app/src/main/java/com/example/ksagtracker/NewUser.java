@@ -3,13 +3,12 @@ package com.example.ksagtracker;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 
 public class NewUser extends AppCompatActivity {
     String Username;
     String Emailaddress;
     Long Phoneno;
-    String Division;
+
     ArrayList<String> mainlist;
 
     public NewUser() {
@@ -39,13 +38,9 @@ public class NewUser extends AppCompatActivity {
         Phoneno = phoneno;
     }
 
-    public String getDivision() {
-        return Division;
-    }
 
-    public void setDivision(String division) {
-        Division = division;
-    }
+
+
 
     public ArrayList<String> getMainlist() {
         return mainlist;

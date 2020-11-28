@@ -18,8 +18,7 @@ public class Registering extends AppCompatActivity {
      DatabaseReference reff;
      NewUser newUser;
      String newusername;
-     long num = 0;
-    private Object Register_mobile;
+
 
 
     @Override
@@ -33,7 +32,7 @@ public class Registering extends AppCompatActivity {
         mailid = (EditText)findViewById(R.id.newid);
         cellnum = (EditText)findViewById(R.id.newno);
         newUser = new NewUser();
-
+        reff = FirebaseDatabase.getInstance().getReference().child("User");
 
         verifyid.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,9 +56,9 @@ public class Registering extends AppCompatActivity {
                     newUser.setEmailaddress(mailid.getText().toString().trim());
                     Long phno = Long.parseLong(cellnum.getText().toString().trim());
                    newUser.setPhoneno(phno);
-                    newUser.setMainlist(null);
-                    reff = FirebaseDatabase.getInstance().getReference().child("User").child(newUser.Username);
-                    reff.push().setValue(newUser);
+
+
+                    reff.child(usrname.getText().toString()).setValue(newUser);
                     openDivisions();
                 }
                 else{

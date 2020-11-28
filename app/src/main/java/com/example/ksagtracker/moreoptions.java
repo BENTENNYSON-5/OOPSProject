@@ -1,22 +1,21 @@
 package com.example.ksagtracker;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.icu.util.Calendar;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.TimePicker;
-import androidx.annotation.RequiresApi;
-import androidx.fragment.app.DialogFragment;
-import android.content.Context;
-import android.app.AlarmManager;
-import android.app.PendingIntent;
-import android.icu.util.Calendar;
-import android.os.Build;
 
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
 import java.text.DateFormat;
 
@@ -35,7 +34,7 @@ TextView timing;
         todo = (Button)findViewById(R.id.todo);
         notes = (Button)findViewById(R.id.notes);
         logout = (Button)findViewById(R.id.logout);
-        dailytime = (Button)findViewById(R.id.dailytime);
+
         timing = (TextView)findViewById(R.id.timing);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,15 +51,10 @@ TextView timing;
         todo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+            openTodo();
             }
         });
-        dailytime.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-            }
-        });
         mTextView3 = findViewById(R.id.timing);
         Button buttonTimePicker =(Button) findViewById(R.id.dailytime);
         buttonTimePicker.setOnClickListener(new View.OnClickListener() {
@@ -74,6 +68,12 @@ TextView timing;
 
 
     }
+
+    public void openTodo() {
+        Intent intent = new Intent(this,ToDo.class);
+        startActivity(intent);
+    }
+
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {

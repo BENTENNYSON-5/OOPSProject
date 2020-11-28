@@ -1,7 +1,5 @@
 package com.example.ksagtracker;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,19 +8,22 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import com.google.firebase.database.DatabaseReference;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Divisions extends AppCompatActivity {
     RadioGroup rg;
     Button b;
-    String divi;
-    DatabaseReference reff;
+    String di;
     RadioButton js;
+    RadioButton hm;
+    RadioButton o;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_divisions);
         js=(RadioButton) findViewById(R.id.js);
+        hm = findViewById(R.id.hm);
+        o = findViewById(R.id.o);
         /*
         Context context = getApplicationContext();
         String text = "Toast message";
@@ -40,32 +41,30 @@ public class Divisions extends AppCompatActivity {
                 if (d == -1) {
                     Messege.messege(getApplicationContext(), "Select any division");
                 } else if (js.isChecked()) {
+                    di = "JOB SEEKER";
                     openDashboard_JS();
-                } else {
+                } else if(hm.isChecked()){
+                    di = "HOME MAKER";
+                    openDashboard_WP();
+                }  else if(o.isChecked()){
+                    di = "OTHERS";
+                    openDashboard_WP();
+                }  else {
+                    di = "WORKING PROFESSIONAL";
                     openDashboard_WP();
                 }
             }
         });
     }
-  /*  public void onRadioButtonClicked(View view ){
-        boolean checked = ((RadioButton)view).isChecked();
-        switch (view.getId()){
-            case R.id.wp:
-                if(checked) {
-                    openDashboard_WP();
-                }
-            case R.id.js:
-                if(checked){
-                    openDashboard_JS();
-                }
-        }
-    }*/
+
     public void openDashboard_WP(){
         Intent intent = new Intent(Divisions.this,Dashboard_WP.class);
+        intent.putExtra("Division",di);
         startActivity(intent);
     }
     public void openDashboard_JS(){
         Intent intent2 = new Intent(Divisions.this,Dashboard_JS.class);
+        intent2.putExtra("Division",di);
         startActivity(intent2);
     }
 }
