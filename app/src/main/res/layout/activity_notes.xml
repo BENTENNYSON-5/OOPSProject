@@ -41,6 +41,7 @@
         android:layout_width="126dp"
         android:layout_height="41dp"
         android:text="Save"
+        android:visibility="invisible"
         app:backgroundTint="#009688"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -1,19 +1,14 @@
 package com.example.ksagtracker;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import java.lang.Object;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 
-public class NewUser extends AppCompatActivity {
-    String Username;
-    String Emailaddress;
-    Long Phoneno;
-
-    ArrayList<String> mainlist;
-
-    public NewUser() {
-    }
-
+public class NewUser {
+   private String Username;
+   private String Emailaddress;
+   private String Phoneno;
     public String getUsername() {
         return Username;
     }
@@ -30,24 +25,8 @@ public class NewUser extends AppCompatActivity {
         Emailaddress = emailaddress;
     }
 
-    public Long getPhoneno() {
-        return Phoneno;
-    }
+    public String getPhoneno() { return Phoneno; }
 
-    public void setPhoneno(Long phoneno) {
-        Phoneno = phoneno;
-    }
-
-
-
-
-
-    public ArrayList<String> getMainlist() {
-        return mainlist;
-    }
-
-    public void setMainlist(ArrayList<String> mainlist) {
-        this.mainlist = mainlist;
-    }
+    public void setPhoneno(String phoneno) { Phoneno = phoneno; }
 }
 

@@ -1,21 +1,22 @@
 package com.example.ksagtracker;
 
-import android.app.AlarmManager;
-import android.app.PendingIntent;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.app.TimePickerDialog;
-import android.content.Context;
 import android.content.Intent;
-import android.icu.util.Calendar;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.TimePicker;
-
 import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
+import android.content.Context;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.icu.util.Calendar;
+import android.os.Build;
+
 
 import java.text.DateFormat;
 
@@ -34,7 +35,6 @@ TextView timing;
         todo = (Button)findViewById(R.id.todo);
         notes = (Button)findViewById(R.id.notes);
         logout = (Button)findViewById(R.id.logout);
-
         timing = (TextView)findViewById(R.id.timing);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,10 +51,9 @@ TextView timing;
         todo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            openTodo();
+                    openToDo();
             }
         });
-
         mTextView3 = findViewById(R.id.timing);
         Button buttonTimePicker =(Button) findViewById(R.id.dailytime);
         buttonTimePicker.setOnClickListener(new View.OnClickListener() {
@@ -68,12 +67,6 @@ TextView timing;
 
 
     }
-
-    public void openTodo() {
-        Intent intent = new Intent(this,ToDo.class);
-        startActivity(intent);
-    }
-
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
@@ -93,21 +86,22 @@ TextView timing;
     @RequiresApi(api = Build.VERSION_CODES.N)
     private void startAlarm(Calendar c) {
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        Intent intent = new Intent(this, AlertReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0);
+        Intent intent3 = new Intent(this, AlertReceiver.class);
+        PendingIntent pendingIntent3 = PendingIntent.getBroadcast(this, 1, intent3, 0);
         if (c.before(Calendar.getInstance())) {
             c.add(Calendar.DATE, 1);
         }
-        alarmManager.setExact(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,c.getTimeInMillis(),AlarmManager.INTERVAL_DAY, pendingIntent3);
     }
 
     public void startMainActivity() {
         Intent i = new Intent(this,MainActivity.class);
         startActivity(i);
     }
-
-
-
+    public void openToDo(){
+        Intent intent = new Intent(this,ToDo.class);
+        startActivity(intent);
+    }
     public void openNotes(){
         Intent i = new Intent(this,Notes.class);
         startActivity(i);

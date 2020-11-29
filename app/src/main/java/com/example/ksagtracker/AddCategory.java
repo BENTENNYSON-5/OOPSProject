@@ -111,8 +111,10 @@ public class AddCategory extends Share implements TimePickerDialog.OnTimeSetList
         c.set(Calendar.HOUR_OF_DAY, hourOfDay);
         c.set(Calendar.MINUTE, minute);
         c.set(Calendar.SECOND, 0);
-        updateTimeText(c);
         startAlarm(c);
+        hourOfDay++;
+        c.set(Calendar.HOUR_OF_DAY,hourOfDay);
+        updateTimeText(c);
     }
     @RequiresApi(api = Build.VERSION_CODES.N)
     private void updateTimeText(Calendar c) {

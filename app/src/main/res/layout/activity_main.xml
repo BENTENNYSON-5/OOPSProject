@@ -8,115 +8,114 @@
     tools:context=".MainActivity">
 
 
+    <!-- -->
+
 
     <EditText
         android:id="@+id/username"
-        android:layout_width="253dp"
-        android:layout_height="45dp"
+        android:layout_width="319dp"
+        android:layout_height="48dp"
         android:ems="10"
         android:hint="Username"
+        android:textColorHint="#575757"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.379" />
-<!-- -->
+        app:layout_constraintVertical_bias="0.27" />
 
     <Button
         android:id="@+id/login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="185dp"
+        android:layout_height="49dp"
         android:text="Login "
         app:backgroundTint="#229C27"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.848"
+        app:layout_constraintHorizontal_bias="0.969"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username"
-        app:layout_constraintVertical_bias="0.095" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.34" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="116dp"
-        android:layout_height="139dp"
+        android:layout_width="169dp"
+        android:layout_height="144dp"
         android:drawableTop="@drawable/ic_baseline_pending_actions_24"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/username"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.247" />
+        app:layout_constraintVertical_bias="0.068" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="327dp"
-        android:layout_height="29dp"
+        android:layout_width="348dp"
+        android:layout_height="43dp"
         android:text="Don't have an account!!"
         android:textColor="#0E0E0E"
         android:textSize="20sp"
         app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.69"
+        app:layout_constraintHorizontal_bias="0.726"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login"
-        app:layout_constraintVertical_bias="0.466" />
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.836" />
 
     <Button
         android:id="@+id/registering"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="288dp"
+        android:layout_height="53dp"
         android:text="Click here to Register"
         app:backgroundTint="#229C27"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.741"
+        app:layout_constraintHorizontal_bias="0.96"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.204" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.915" />
 
     <com.facebook.login.widget.LoginButton
         android:id="@+id/login_button"
-        android:layout_width="203dp"
-        android:layout_height="32dp"
+        android:layout_width="219dp"
+        android:layout_height="53dp"
         android:layout_gravity="center_horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.149"
+        app:layout_constraintHorizontal_bias="0.171"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.641"
+        app:layout_constraintVertical_bias="0.603"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/text_user"
-        android:layout_width="50dp"
-        android:layout_height="45dp"
+        android:layout_width="74dp"
+        android:layout_height="46dp"
         android:drawableTop="@drawable/ggoogle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.776"
+        app:layout_constraintHorizontal_bias="0.86"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.646" />
+        app:layout_constraintVertical_bias="0.594" />
 
     <TextView
         android:id="@+id/textView7"
-        android:layout_width="106dp"
-        android:layout_height="28dp"
+        android:layout_width="197dp"
+        android:layout_height="48dp"
+        android:autoSizeTextType="uniform"
         android:text="Or Login With"
         android:textStyle="bold"
-        android:autoSizeTextType="uniform"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.434"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.571" />
-
+        app:layout_constraintVertical_bias="0.525" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

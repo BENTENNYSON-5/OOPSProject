@@ -84,7 +84,7 @@ public class Register_mobile extends AppCompatActivity {
                         next.setEnabled(false);
                         optEnter.setVisibility(View.GONE);
                         progressBar.setVisibility(View.VISIBLE);
-                        state.setText("Logging in");
+                        state.setText("Verifying your OTP");
                         state.setVisibility(View.VISIBLE);
                         otpCode = optEnter.getText().toString();
                         if(otpCode.isEmpty()){
@@ -167,9 +167,6 @@ public class Register_mobile extends AppCompatActivity {
         super.onStart();
 
         if(fAuth.getCurrentUser() != null){
-            progressBar.setVisibility(View.VISIBLE);
-            state.setText("Checking..");
-            state.setVisibility(View.VISIBLE);
             checkUserProfile();
         }
     }

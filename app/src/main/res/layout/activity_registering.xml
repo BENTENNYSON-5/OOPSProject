@@ -9,16 +9,18 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="347dp"
-        android:layout_height="136dp"
+        android:layout_width="364dp"
+        android:layout_height="139dp"
         android:autoSizeTextType="uniform"
         android:text="For username:\nAtleast 8 in length\nShould have atleast 1 capital and atleast 1 small alphabet \nShould have atleast 1 digit \nShould have atleast 1 special character"
+        android:textColor="#010101"
+        android:textColorHint="#1c1c1c"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.247"
+        app:layout_constraintHorizontal_bias="0.421"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.795" />
+        app:layout_constraintVertical_bias="0.8" />
 
     <EditText
         android:id="@+id/newusername"
@@ -27,6 +29,7 @@
         android:ems="10"
         android:hint="Username"
         android:inputType="textPersonName"
+        android:textColorHint="#575757"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.186"
@@ -39,8 +42,8 @@
         android:layout_width="116dp"
         android:layout_height="139dp"
         android:layout_marginTop="56dp"
+        android:textColorHint="#0a0a0a"
         android:drawableTop="@drawable/ic_baseline_pending_actions_24"
-        android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/username"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -53,6 +56,7 @@
         android:layout_height="40dp"
         android:ems="10"
         android:hint="EmailID"
+        android:textColorHint="#575757"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -66,6 +70,7 @@
         android:layout_width="265dp"
         android:layout_height="43dp"
         android:ems="10"
+        android:textColorHint="#575757"
         android:hint="Phone number"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -80,6 +85,7 @@
         android:layout_width="100dp"
         android:layout_height="39dp"
         android:text="Verify"
+        android:visibility="invisible"
         app:backgroundTint="#229C27"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -96,22 +102,22 @@
         app:backgroundTint="#229C27"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.411"
+        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toEndOf="@+id/newno"
-        app:layout_constraintTop_toBottomOf="@+id/verifyid"
-        app:layout_constraintVertical_bias="0.131" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.578" />
 
     <Button
         android:id="@+id/newregister"
-        android:layout_width="153dp"
-        android:layout_height="48dp"
+        android:layout_width="182dp"
+        android:layout_height="42dp"
         android:text="Next"
-        app:backgroundTint="#11877C"
+        app:backgroundTint="#229C27"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.821"
+        app:layout_constraintHorizontal_bias="0.877"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/verifyno"
-        app:layout_constraintVertical_bias="0.784" />
+        app:layout_constraintVertical_bias="0.78" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

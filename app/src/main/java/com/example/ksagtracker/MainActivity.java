@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
@@ -27,8 +28,13 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-public class MainActivity extends NewUser {
+public class MainActivity extends AppCompatActivity {
 
     private Button login,toRegister;
     private EditText Username;
@@ -39,13 +45,14 @@ public class MainActivity extends NewUser {
     private AccessTokenTracker accessTokenTracker;
     private LoginButton loginButton;
     private TextView textViewUser;
-    //DatabaseReference rref;
+    DatabaseReference tuff;
+    Logininfo ex;
     private static final String TAG = "FacebookAuthentication";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // rref = FirebaseDatabase.getInstance().getReference().child("User");
+        ex = new Logininfo();
         mFirebaseAuth = FirebaseAuth.getInstance();
         FacebookSdk.sdkInitialize(getApplicationContext());
         textViewUser = findViewById(R.id.text_user);
@@ -67,7 +74,8 @@ public class MainActivity extends NewUser {
             public void onSuccess(LoginResult loginResult) {
                 Log.d(TAG,"onSuccess"+ loginResult);
                 handleFacebookToken(loginResult.getAccessToken());
-                openDivision();
+                Intent ii = new Intent(MainActivity.this,Dashboard_WP.class);
+                startActivity(ii);
 
             }
 
@@ -109,22 +117,22 @@ public class MainActivity extends NewUser {
 
             @Override
             public void onClick(View v) {
-               username = Username.getText().toString();
-               //rref.child(username).child("mainlist");
-               /*rref.addListenerForSingleValueEvent(new ValueEventListener() {
-                   @Override
-                   public void onDataChange(@NonNull DataSnapshot snapshot) {
-                       if(snapshot.exists()){
-                           for(DataSnapshot dss: snapshot.getChildren())
-                               mainlist.add(dss.getValue(String.class));
-                       }
-                   }
+               username = Username.getText().toString().trim();
+                tuff = FirebaseDatabase.getInstance().getReference().child(String.valueOf(username)).child("Details");
+                tuff.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        ex.sUsername(snapshot.child("username").getValue().toString());
+                        ex.sEmailaddress(snapshot.child("emailaddress").getValue().toString());
+                        ex.sPhoneno(snapshot.child("phoneno").getValue().toString());
+                        openDivision();
+                    }
 
-                   @Override
-                   public void onCancelled(@NonNull DatabaseError error) {
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
 
-                   }
-               });*/
+                    }
+                });
             }
         });
         toRegister.setOnClickListener(new View.OnClickListener(){
@@ -148,6 +156,7 @@ public class MainActivity extends NewUser {
     private void openDivision() {
         Intent i =new Intent(this,Divisions.class);
         i.putExtra("user",username);
+        Messege.messege(getApplicationContext(),"Logging in as"+ username);
         startActivity(i);
     }
 
@@ -170,6 +179,7 @@ public class MainActivity extends NewUser {
                 }
             }
         });
+
     }
 
     @Override

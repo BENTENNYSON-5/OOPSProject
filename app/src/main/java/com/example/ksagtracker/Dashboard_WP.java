@@ -18,6 +18,7 @@ public class Dashboard_WP extends AppCompatActivity {
     ImageButton wpinven;
     ImageButton wpbill;
     TextView other1;
+    TextView divis;
     public String s;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,8 @@ public class Dashboard_WP extends AppCompatActivity {
         wpinven = (ImageButton)findViewById(R.id.wpinven);
         wpbill = (ImageButton)findViewById(R.id.wpbill);
         other1 = (TextView)findViewById(R.id.other1);
+        divis = findViewById(R.id.textView11);
+        divis.setText(getIntent().getStringExtra("Division"));
         morewp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,7 +42,6 @@ public class Dashboard_WP extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 openSearch();
-
             }
         });
         wpmeet.setOnClickListener(new View.OnClickListener() {
@@ -73,20 +75,20 @@ public class Dashboard_WP extends AppCompatActivity {
     }
 
     public void openSearch() {
-        Intent i =new Intent(this,Search.class);
+        Intent i =new Intent(Dashboard_WP.this,Search.class);
         startActivity(i);
     }
 
     public void openmoreoptions(){
-        Intent i = new Intent(this,moreoptions.class);
+        Intent i = new Intent(Dashboard_WP.this,moreoptions.class);
         startActivity(i);
     }
     public void openAddCategory(){
-        Intent i = new Intent(this,AddCategory.class);
+        Intent i = new Intent(Dashboard_WP.this,AddCategory.class);
         startActivity(i);
     }
     public void openAddWork(){
-        Intent i = new Intent(this,AddWork.class);
+        Intent i = new Intent(Dashboard_WP.this,AddWork.class);
         i.putExtra("Category",s);
         startActivity(i);
     }

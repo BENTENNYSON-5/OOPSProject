@@ -8,17 +8,16 @@
 
     <TextView
         android:id="@+id/textView16"
-        android:layout_width="108dp"
-        android:layout_height="27dp"
+        android:layout_width="119dp"
+        android:layout_height="37dp"
         android:autoSizeTextType="uniform"
         android:text="      BILLS"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.884" />
+        app:layout_constraintVertical_bias="0.863" />
 
     <TextView
         android:id="@+id/textView15"
@@ -29,61 +28,68 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.889"
+        app:layout_constraintHorizontal_bias="0.903"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.491" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/searchwp"
-        android:layout_width="54dp"
-        android:layout_height="49dp"
-        android:background="#E91E63"
+        android:layout_width="79dp"
+        android:layout_height="52dp"
+        android:background="#5cc4ff"
         android:drawableTop="@drawable/ic_baseline_search_24"
+        android:textColor="#707070"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.001" />
+
 
     <TextView
         android:id="@+id/textView11"
-        android:layout_width="413dp"
-        android:layout_height="48dp"
+        android:layout_width="302dp"
+        android:layout_height="42dp"
         android:autoSizeTextType="uniform"
-        android:background="#8BC34A"
-        android:text="WORKING PROFFESSIONAL or HOME MAKER or OTHERS"
+        android:background="#f0ff73"
+        android:text="WORKING PROFESSIONAL"
+        android:textColor="#707070"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/searchwp"
-        app:layout_constraintHorizontal_bias="0.584"
-        app:layout_constraintStart_toEndOf="@+id/morewp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.07" />
+        app:layout_constraintVertical_bias="0.088" />
 
     <TextView
         android:id="@+id/textView12"
-        android:layout_width="280dp"
-        android:layout_height="48dp"
+        android:layout_width="244dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginBottom="125dp"
         android:autoSizeTextType="uniform"
-        android:background="#E91E63"
-        android:text="     DASHBOARD"
+        android:background="#5cc4ff"
+        android:text="  DASHBOARD"
+        android:textColor="#100D0D"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView11"
-        app:layout_constraintEnd_toStartOf="@+id/searchwp"
-        app:layout_constraintHorizontal_bias="0.23"
-        app:layout_constraintStart_toEndOf="@+id/morewp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/searchjs"
+        app:layout_constraintHorizontal_bias="0.536"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.001" />
 
     <TextView
         android:id="@+id/morewp"
-        android:layout_width="74dp"
-        android:layout_height="49dp"
+        android:layout_width="72dp"
+        android:layout_height="52dp"
         android:autoSizeTextType="uniform"
-        android:background="#E91E63"
+        android:background="#5cc4ff"
         android:text="More"
-        android:textStyle="bold"
+        android:textColor="#100D0D"
+        android:textStyle=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -93,14 +99,14 @@
 
     <ImageButton
         android:id="@+id/wpinven"
-        android:layout_width="175dp"
-        android:layout_height="172dp"
+        android:layout_width="174dp"
+        android:layout_height="183dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.932"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11"
-        app:layout_constraintVertical_bias="0.171"
+        app:layout_constraintVertical_bias="0.137"
         app:srcCompat="@drawable/hom_inv" />
 
     <ImageButton
@@ -109,10 +115,10 @@
         android:layout_height="182dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/wpinven"
-        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintHorizontal_bias="0.41"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11"
-        app:layout_constraintVertical_bias="0.16"
+        app:layout_constraintVertical_bias="0.141"
         app:srcCompat="@drawable/impp_meet" />
 
     <TextView
@@ -126,13 +132,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.182"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.49" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/other1"
-        android:layout_width="191dp"
-        android:layout_height="29dp"
+        android:layout_width="237dp"
+        android:layout_height="35dp"
         android:autoSizeTextType="uniform"
         android:drawableRight="@drawable/ic_right_arrow"
         android:text="Other Categories"
@@ -150,8 +155,9 @@
         android:layout_height="177dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.552"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.805"
+        app:layout_constraintVertical_bias="0.761"
         app:srcCompat="@drawable/billswp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

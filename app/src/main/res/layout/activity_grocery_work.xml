@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/starting_back"
     tools:context=".AddWork">
 
     <TextView
@@ -34,7 +35,7 @@
         app:layout_constraintHorizontal_bias="0.126"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.079" />
+        app:layout_constraintVertical_bias="0.062" />
 
     <EditText
         android:id="@+id/editTextTextPersonName6_grocery"
@@ -67,19 +68,18 @@
 
     <EditText
         android:id="@+id/editTextTextPersonName_grocery"
-        android:layout_width="371dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="92dp"
+        android:layout_width="385dp"
+        android:layout_height="52dp"
         android:layout_marginBottom="266dp"
         android:ems="10"
         android:hint="Name"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName7"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.65"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.158" />
+        app:layout_constraintVertical_bias="0.213" />
 
     <Button
         android:id="@+id/button7_grocery"
@@ -161,13 +161,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.108"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextTextPersonName7"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="173dp"
+        android:layout_height="49dp"
         android:layout_marginStart="23dp"
         android:layout_marginLeft="23dp"
         android:layout_marginEnd="31dp"
@@ -179,35 +178,41 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/textView_grocery"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName_grocery" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName_grocery"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/button5"
         android:layout_width="58dp"
         android:layout_height="37dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="76dp"
         android:text="+"
         android:textSize="14sp"
         app:backgroundTint="#009688"
         app:iconTint="#706161"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.77"
+        app:layout_constraintHorizontal_bias="0.793"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName6_grocery" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName6_grocery"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/button6"
         android:layout_width="66dp"
         android:layout_height="36dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="76dp"
         android:text="-"
         android:textSize="14sp"
         app:backgroundTint="#009688"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.979"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName6_grocery" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName6_grocery"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/button8"

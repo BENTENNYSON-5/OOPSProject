@@ -10,13 +10,16 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Divisions extends AppCompatActivity {
+import com.google.firebase.auth.FirebaseAuth;
+
+public class Divisions extends Registering {
     RadioGroup rg;
     Button b;
     String di;
     RadioButton js;
     RadioButton hm;
     RadioButton o;
+   String Rtoast;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,8 +33,12 @@ public class Divisions extends AppCompatActivity {
         int duration = Toast.LENGTH_SHORT;
         Toast toast = Toast.makeText(context, text, duration);
         toast.show();*/
-        Toast t = Toast.makeText(getApplicationContext(), "Successfully registered as "+getIntent().getStringExtra("registered user"),Toast.LENGTH_SHORT);
-        t.show();
+        if(getIntent().getStringExtra("registered user") == null){
+            Rtoast =" ";
+        }else {
+            Toast t = Toast.makeText(getApplicationContext(), "Successfully registered as " + getIntent().getStringExtra("registered user"), Toast.LENGTH_SHORT);
+            t.show();
+        }
         rg = (RadioGroup)findViewById(R.id.radio);
         b = (Button)findViewById(R.id.done1);
         b.setOnClickListener(new View.OnClickListener() {
@@ -41,13 +48,13 @@ public class Divisions extends AppCompatActivity {
                 if (d == -1) {
                     Messege.messege(getApplicationContext(), "Select any division");
                 } else if (js.isChecked()) {
-                    di = "JOB SEEKER";
+                    di = "   JOB SEEKER";
                     openDashboard_JS();
                 } else if(hm.isChecked()){
-                    di = "HOME MAKER";
+                    di = "   HOME MAKER";
                     openDashboard_WP();
                 }  else if(o.isChecked()){
-                    di = "OTHERS";
+                    di = "      OTHERS";
                     openDashboard_WP();
                 }  else {
                     di = "WORKING PROFESSIONAL";
@@ -60,11 +67,13 @@ public class Divisions extends AppCompatActivity {
     public void openDashboard_WP(){
         Intent intent = new Intent(Divisions.this,Dashboard_WP.class);
         intent.putExtra("Division",di);
+       // reff.setValue(newUser);
         startActivity(intent);
     }
     public void openDashboard_JS(){
         Intent intent2 = new Intent(Divisions.this,Dashboard_JS.class);
         intent2.putExtra("Division",di);
+        //reff.setValue(newUser);
         startActivity(intent2);
     }
 }

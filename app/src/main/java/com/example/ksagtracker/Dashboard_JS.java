@@ -35,7 +35,7 @@ public class Dashboard_JS extends AppCompatActivity {
         searchjs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+              openSearch();
             }
         });
         jsmail.setOnClickListener(new View.OnClickListener() {
@@ -71,20 +71,20 @@ public class Dashboard_JS extends AppCompatActivity {
     }
 
     public void openmoreoptions() {
-        Intent i = new Intent(this,moreoptions.class);
+        Intent i = new Intent(Dashboard_JS.this,moreoptions.class);
         startActivity(i);
     }
     public void openAddCategory(){
-        Intent i = new Intent(this,AddCategory.class);
+        Intent i = new Intent(Dashboard_JS.this,AddCategory.class);
         startActivity(i);
     }
     public void openGroceryWork() {
-        Intent i = new Intent(this, GroceryWork.class);
+        Intent i = new Intent(Dashboard_JS.this, GroceryWork.class);
         i.putExtra("Category", s);
         startActivity(i);
     }
         public void openAddWork(){
-            Intent i = new Intent(this,AddWork.class);
+            Intent i = new Intent(Dashboard_JS.this,AddWork.class);
             i.putExtra("Category",s);
             startActivity(i);
     }

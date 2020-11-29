@@ -1,15 +1,23 @@
 package com.example.ksagtracker;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 public class Registering extends AppCompatActivity {
      Button verifyid,verifyno,Register;
@@ -18,9 +26,6 @@ public class Registering extends AppCompatActivity {
      DatabaseReference reff;
      NewUser newUser;
      String newusername;
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,18 +37,14 @@ public class Registering extends AppCompatActivity {
         mailid = (EditText)findViewById(R.id.newid);
         cellnum = (EditText)findViewById(R.id.newno);
         newUser = new NewUser();
-        reff = FirebaseDatabase.getInstance().getReference().child("User");
-
         verifyid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //code akhil
             }
         });
         verifyno.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //code gagan
                 open();
             }
         });
@@ -54,11 +55,9 @@ public class Registering extends AppCompatActivity {
                     newusername = usrname.getText().toString().trim();
                     newUser.setUsername(usrname.getText().toString().trim());
                     newUser.setEmailaddress(mailid.getText().toString().trim());
-                    Long phno = Long.parseLong(cellnum.getText().toString().trim());
-                   newUser.setPhoneno(phno);
-
-
-                    reff.child(usrname.getText().toString()).setValue(newUser);
+                    newUser.setPhoneno((cellnum.getText().toString().trim()));
+                    reff = FirebaseDatabase.getInstance().getReference().child(String.valueOf(newUser.getUsername()));
+                    reff.child("Details").setValue(newUser);
                     openDivisions();
                 }
                 else{
@@ -77,7 +76,7 @@ public class Registering extends AppCompatActivity {
         i.putExtra("registered user",newusername);
         startActivity(i);
     }
-    private boolean passwordValidates( String pass ) {
+    public boolean passwordValidates( String pass ) {
         int countt = 0;
 
         if( 8 <= pass.length())
@@ -88,7 +87,7 @@ public class Registering extends AppCompatActivity {
                 countt ++;
             if( pass.matches(".*[A-Z].*") )
                 countt ++;
-            if(pass.matches(".*[(?=.[@#$%^&+=])].*" ) )
+            if(pass.matches(".*[(?=@%^&+=)].*" ) )
                 countt ++;
         }
 
